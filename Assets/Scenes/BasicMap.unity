@@ -557,7 +557,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _state: 0
+  _state: 2
   _stateNoneMat: {fileID: 2100000, guid: 67e562b5e599f53498b44c7c69b28325, type: 2}
   _stateFlowerMat: {fileID: 2100000, guid: 918ebc6556a1050438c89a43d2a30aa0, type: 2}
   _statePortestMat: {fileID: 2100000, guid: 718a7c39fc331a443acdf21f99201074, type: 2}
@@ -861,7 +861,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _state: 0
+  _state: 1
   _stateNoneMat: {fileID: 2100000, guid: 67e562b5e599f53498b44c7c69b28325, type: 2}
   _stateFlowerMat: {fileID: 2100000, guid: 918ebc6556a1050438c89a43d2a30aa0, type: 2}
   _statePortestMat: {fileID: 2100000, guid: 718a7c39fc331a443acdf21f99201074, type: 2}
@@ -992,8 +992,28 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  BuildingCommonsList: []
+    SerializationNodes:
+    - Name: _buildingStatePair
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Game.Building.Building_Common,
+        Assembly-CSharp],[Game.Building.EBuildingProtesterState, Assembly-CSharp]],
+        mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[Game.Building.Building_Common,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!4 &1705810073
 Transform:
   m_ObjectHideFlags: 0

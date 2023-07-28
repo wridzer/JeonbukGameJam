@@ -39,6 +39,8 @@ namespace Game.Building
             {
                 _meshRenderer = this.GetComponent<MeshRenderer>();
             }
+
+            UpdateBuildingMaterial(_state);
         }
 
         private void OnDestroy()
@@ -75,6 +77,7 @@ namespace Game.Building
         {
             _state = state;
             UpdateBuildingMaterial(state);
+            _buildingController.SetBuildingState(this, state);
             _settedTime = Time.realtimeSinceStartup;
 
         }
