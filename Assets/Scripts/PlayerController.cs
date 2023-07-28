@@ -27,16 +27,19 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float forwardTranslation = Input.GetAxis("Vertical") * speed;
-        float horizontalTranslation = Input.GetAxis("Horizontal") * speed;
-        float rotation = Input.GetAxis("Mouse X") * rotationSpeed;
+        // float forwardTranslation = Input.GetAxis("Vertical") * speed;
+        // float horizontalTranslation = Input.GetAxis("Horizontal") * speed;
+        // Calculate the direction of movement based on player input
+        Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
 
-        forwardTranslation *= Time.deltaTime;
-        horizontalTranslation *= Time.deltaTime;
+        // Adjust the player's velocity while keeping vertical velocity the same
+        rb.velocity = transform.TransformDirection(direction) * speed + new Vector3(0, rb.velocity.y, 0);
+
+        float rotation = Input.GetAxis("Mouse X") * rotationSpeed;
         rotation *= Time.deltaTime;
 
         Quaternion turn = Quaternion.Euler(0f, rotation, 0f);
-        rb.MovePosition(rb.position + this.transform.forward * forwardTranslation + this.transform.right * horizontalTranslation);
+        // rb.MovePosition(rb.position + this.transform.forward * forwardTranslation + this.transform.right * horizontalTranslation);
         rb.MoveRotation(rb.rotation * turn);
 
         if (Input.GetButtonDown("Jump") && !isJumping)
