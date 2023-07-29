@@ -109,9 +109,7 @@ public class PlayerController : MonoBehaviour
                 if(speed != 0)
                     StartCoroutine(WaitForAnim(speed, 5f));
                 heldObject = hitColliders[0].gameObject;
-                heldObject.GetComponentInParent<PlantSpawner>()?.PlantRemoved();
-                heldObject.transform.SetParent(pickupPoint);
-                heldObject.transform.localPosition = Vector3.zero;
+                StartCoroutine(WaitForPickup());
             }
         }
     }
@@ -141,13 +139,27 @@ public class PlayerController : MonoBehaviour
             // Drop off the object
             animator.SetTrigger("Plant");
             StartCoroutine(WaitForAnim(speed, 5f));
-            heldObject.transform.SetParent(null);
-            heldObject.transform.localPosition = other.transform.position + new Vector3(0, 1, 0);
-            heldObject = null;
-            other.GetComponent<Building_FlowerPoint>()?.SetFlowerPointCondition(EBuildingProtesterState.Flower);
-            other.GetComponent<Civilion_Common>()?.SetStateOfProtester(ECivilionState.Peace);
-            SoundManager.Instance.RequestPlayClip(getPointSound, setFollowTarget: transform);
+            StartCoroutine(WaitForPutDown(other.gameObject));
         }
+    }
+
+    private IEnumerator WaitForPutDown(GameObject other)
+    {
+        yield return new WaitForSeconds(2.5f);
+        heldObject.transform.SetParent(null);
+        heldObject.transform.localPosition = other.transform.position + new Vector3(0, 1, 0);
+        heldObject = null;
+        other.GetComponent<Building_FlowerPoint>()?.SetFlowerPointCondition(EBuildingProtesterState.Flower);
+        other.GetComponent<Civilion_Common>()?.SetStateOfProtester(ECivilionState.Peace);
+        SoundManager.Instance.RequestPlayClip(getPointSound, setFollowTarget: transform);
+    }
+
+    private IEnumerator WaitForPickup()
+    {
+        yield return new WaitForSeconds(2.5f);
+        heldObject.GetComponentInParent<PlantSpawner>()?.PlantRemoved();
+        heldObject.transform.SetParent(pickupPoint);
+        heldObject.transform.localPosition = Vector3.zero;
     }
 
     private IEnumerator WaitForAnim(float tempSpeed, float duration)

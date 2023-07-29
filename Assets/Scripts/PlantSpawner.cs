@@ -21,14 +21,14 @@ public class PlantSpawner : MonoBehaviour
     private IEnumerator SpawnDelay()
     {
         yield return new WaitForSeconds(spawnDelay);
-        GameObject plant = Instantiate(plantPrefab, transform.position + spawnPlacement, Quaternion.identity);
+        GameObject plant = Instantiate(plantPrefab, transform.position + spawnPlacement, new Quaternion(-0.330512464f, 0.625109255f, -0.625109136f, 0.330512494f));
         plant.transform.parent = transform;
     }
 
     private IEnumerator SpawnDelay(int delay)
     {
         yield return new WaitForSeconds(delay);
-        GameObject plant = Instantiate(plantPrefab, transform.position + spawnPlacement, Quaternion.identity);
+        GameObject plant = Instantiate(plantPrefab, transform.position + spawnPlacement, new Quaternion(-0.330512464f, 0.625109255f, -0.625109136f, 0.330512494f));
         plant.transform.parent = transform;
     }
 }
