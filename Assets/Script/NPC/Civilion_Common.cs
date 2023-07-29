@@ -139,23 +139,23 @@ namespace Game.NPC
                     SetDestination();
                     break;
                 case ECivilionState.Protester:
-                    ProtestToBuilding();
+                    ProtestToFlowerPooint();
                     break;
                 default:
                     break;
             }
         }
 
-        private void ProtestToBuilding()
+        private void ProtestToFlowerPooint()
         {
             Collider[] collliders = Physics.OverlapSphere(transform.position, 5f);
-            Building_Common t_buildingCommon;
+            Building_FlowerPoint t_buildingCommon;
 
             for (int i = 0; i < collliders.Length; i++)
             {
-                if(collliders[i].TryGetComponent<Building_Common>(out t_buildingCommon) == true)
+                if(collliders[i].TryGetComponent<Building_FlowerPoint>(out t_buildingCommon) == true)
                 {
-                    t_buildingCommon.SetProtesterCondition(EBuildingProtesterState.Protest);
+                    t_buildingCommon.SetFlowerPointCondition(EBuildingProtesterState.Protest);
                     break;
                 }
             }
@@ -172,8 +172,8 @@ namespace Game.NPC
         [Button]
         private void FindHome()
         {
-            Building.Building_Common[] listOfBuilding = _buildingCon.GetStateBuildings(Building.EBuildingProtesterState.Protest);
-            Building.Building_Common oneBuilding = listOfBuilding[Random.Range(0, listOfBuilding.Length)];
+            Building.Building_FlowerPoint[] listOfBuilding = _buildingCon.GetStateBuildings(Building.EBuildingProtesterState.Protest);
+            Building.Building_FlowerPoint oneBuilding = listOfBuilding[Random.Range(0, listOfBuilding.Length)];
             Vector3 destinationPosition = oneBuilding.transform.position;
             destinationPosition.y = 0;
 
@@ -183,8 +183,8 @@ namespace Game.NPC
         [Button]
         private void SetDestination()
         {
-            Building.Building_Common[] listOfBuilding = _buildingCon.GetStateBuildings(Building.EBuildingProtesterState.None);
-            Building.Building_Common oneBuilding = listOfBuilding[Random.Range(0, listOfBuilding.Length)];
+            Building.Building_FlowerPoint[] listOfBuilding = _buildingCon.GetStateBuildings(Building.EBuildingProtesterState.None);
+            Building.Building_FlowerPoint oneBuilding = listOfBuilding[Random.Range(0, listOfBuilding.Length)];
             Vector3 destinationPosition = oneBuilding.transform.position;
             destinationPosition.y = 0;
 

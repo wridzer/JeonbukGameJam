@@ -20,14 +20,14 @@ namespace Game.Building
         }
 
         [TitleGroup("Debug")]
-        [SerializeField] Dictionary<Building_Common, EBuildingProtesterState> _buildingStatePair = new Dictionary<Building_Common, EBuildingProtesterState>(1000);
+        [SerializeField] Dictionary<Building_FlowerPoint, EBuildingProtesterState> _flowerStatePair = new Dictionary<Building_FlowerPoint, EBuildingProtesterState>(500);
 
-        public Dictionary<Building_Common, EBuildingProtesterState> BuildingCommons => _buildingStatePair;
+        public Dictionary<Building_FlowerPoint, EBuildingProtesterState> FlowerPointPairs => _flowerStatePair;
 
-        public Building_Common[] GetStateBuildings(EBuildingProtesterState state)
+        public Building_FlowerPoint[] GetStateBuildings(EBuildingProtesterState state)
         {
-            List<Building_Common> t_buildlings = new List<Building_Common>(1000);
-            Building_Common[] t_keys = _buildingStatePair.Keys.ToArray();
+            List<Building_FlowerPoint> t_buildlings = new List<Building_FlowerPoint>(500);
+            Building_FlowerPoint[] t_keys = _flowerStatePair.Keys.ToArray();
 
             switch (state)
             {
@@ -49,9 +49,9 @@ namespace Game.Building
 
             void Find(EBuildingProtesterState state)
             {
-                for (int i = 0; i < _buildingStatePair.Count; i++)
+                for (int i = 0; i < _flowerStatePair.Count; i++)
                 {
-                    if (_buildingStatePair[t_keys[i]] == state)
+                    if (_flowerStatePair[t_keys[i]] == state)
                     {
                         t_buildlings.Add(t_keys[i]);
                     }
@@ -60,26 +60,26 @@ namespace Game.Building
         }
 
 
-        public void SetBuildingState(Building_Common buildingCommon, EBuildingProtesterState state)
+        public void SetBuildingState(Building_FlowerPoint flowerPoint, EBuildingProtesterState state)
         {
-            if(_buildingStatePair.ContainsKey(buildingCommon))
+            if(_flowerStatePair.ContainsKey(flowerPoint))
             {
-                _buildingStatePair[buildingCommon] = state;
+                _flowerStatePair[flowerPoint] = state;
             }
             else
             {
-                AddBuildingInList(buildingCommon, state);
+                AddBuildingInList(flowerPoint, state);
             }
         }
 
-        public void AddBuildingInList(Building_Common buildingCommon, EBuildingProtesterState state)
+        public void AddBuildingInList(Building_FlowerPoint flowerPoint, EBuildingProtesterState state)
         {
-            _buildingStatePair.Add(buildingCommon, state);
+            _flowerStatePair.Add(flowerPoint, state);
         }
 
-        public void DeleteBuildingInList(Building_Common buildingCommon)
+        public void DeleteBuildingInList(Building_FlowerPoint flowerPoint)
         {
-            _buildingStatePair.Remove(buildingCommon);
+            _flowerStatePair.Remove(flowerPoint);
         }
 
 
