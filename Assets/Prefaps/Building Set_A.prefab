@@ -1,5 +1,142 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6439057448099566551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1441867300278188182}
+  - component: {fileID: 3365389375511264676}
+  - component: {fileID: 8245939847840227785}
+  - component: {fileID: 7206009380402705547}
+  - component: {fileID: 8131660043533319322}
+  m_Layer: 0
+  m_Name: Basic_BuildingA_combined_static
+  m_TagString: Ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
+  m_IsActive: 1
+--- !u!4 &1441867300278188182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439057448099566551}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3009238098471790040}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3365389375511264676
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439057448099566551}
+  m_Mesh: {fileID: 4300000, guid: 7f9c553226ab2ab4ab68598b9e2cffec, type: 2}
+--- !u!23 &8245939847840227785
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439057448099566551}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 379dc28c0f84c7840b87f509a1ec8dc1, type: 2}
+  - {fileID: 2100000, guid: 73743b7cd4cd7a248baa5e4e84071388, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7206009380402705547
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439057448099566551}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 7f9c553226ab2ab4ab68598b9e2cffec, type: 2}
+--- !u!114 &8131660043533319322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439057448099566551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760e133c6a57d6c498168a3ca3f3d71a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _state: 0
+  _stateNoneMat: {fileID: 2100000, guid: 379dc28c0f84c7840b87f509a1ec8dc1, type: 2}
+  _stateFlowerMat: {fileID: 2100000, guid: a95a0893809ae6840a64dcc8bc2813c0, type: 2}
+  _stateProtestMat: {fileID: 2100000, guid: b9c959afe6aa2494093ea53e5928a60d, type: 2}
+  _meshRenderer: {fileID: 0}
+  _noneShowGameObject: {fileID: 0}
+  _flowerShowGameObject: {fileID: 0}
+  _protestShowGameObject: {fileID: 0}
 --- !u!1 &6723056345980274211
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,7 +167,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6127370291324892251}
-  - {fileID: 3029220089912371707}
+  - {fileID: 3009238098471790040}
   m_Father: {fileID: 3440856185709926097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7153060909259079021
@@ -132,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meshRenderer: {fileID: 6137981541391307115}
---- !u!1 &7956119234228794777
+--- !u!1 &7303853064051466695
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,144 +277,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3435299107164110249}
-  - component: {fileID: 7201499982856933134}
-  - component: {fileID: 171112936366365016}
-  - component: {fileID: 8787126094373537711}
-  - component: {fileID: 4862096289144770962}
-  m_Layer: 0
-  m_Name: Basic_BuildingA_combined_static
-  m_TagString: Ground
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3435299107164110249
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7956119234228794777}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3029220089912371707}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7201499982856933134
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7956119234228794777}
-  m_Mesh: {fileID: 4300000, guid: e13b5ea783566cf44af9552c410356ab, type: 2}
---- !u!23 &171112936366365016
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7956119234228794777}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 379dc28c0f84c7840b87f509a1ec8dc1, type: 2}
-  - {fileID: 2100000, guid: 73743b7cd4cd7a248baa5e4e84071388, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8787126094373537711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7956119234228794777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 760e133c6a57d6c498168a3ca3f3d71a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _state: 0
-  _stateNoneMat: {fileID: 2100000, guid: 379dc28c0f84c7840b87f509a1ec8dc1, type: 2}
-  _stateFlowerMat: {fileID: 2100000, guid: a95a0893809ae6840a64dcc8bc2813c0, type: 2}
-  _stateProtestMat: {fileID: 2100000, guid: b9c959afe6aa2494093ea53e5928a60d, type: 2}
-  _meshRenderer: {fileID: 0}
-  _noneShowGameObject: {fileID: 0}
-  _flowerShowGameObject: {fileID: 0}
-  _protestShowGameObject: {fileID: 0}
---- !u!64 &4862096289144770962
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7956119234228794777}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: e13b5ea783566cf44af9552c410356ab, type: 2}
---- !u!1 &8451785943880192503
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3029220089912371707}
+  - component: {fileID: 3009238098471790040}
   m_Layer: 0
   m_Name: Basic BuildingACombined_Meshes
   m_TagString: Ground
@@ -285,20 +285,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
---- !u!4 &3029220089912371707
+--- !u!4 &3009238098471790040
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8451785943880192503}
+  m_GameObject: {fileID: 7303853064051466695}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.8, y: -11.01778, z: 18.5}
+  m_LocalPosition: {x: 9.3, y: -10.89778, z: 18.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3435299107164110249}
+  - {fileID: 1441867300278188182}
   m_Father: {fileID: 7796521511529854345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &102996976674987090
@@ -1016,12 +1016,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8880222395913340207}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4359876409790253686 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5169436684236181337, guid: 29a94a16147df5244aa10d327a39dbb1,
-    type: 3}
-  m_PrefabInstance: {fileID: 8880222395913340207}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4486469631179131498 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5007940542112239429, guid: 29a94a16147df5244aa10d327a39dbb1,
@@ -1107,271 +1101,15 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 8661812530438209536
-      type: {class: DataContainer, ns: BrainFailProductions.PolyFew, asm: Assembly-CSharp}
-      data:
-        objectsHistory:
-          rid: 8661812530438209537
-        objectMeshPairs:
-          rid: 8661812530438209550
-        currentLodLevelSettings:
-        - reductionStrength: 0
-          transitionHeight: 0.6
-          preserveUVFoldover: 0
-          preserveUVSeams: 0
-          preserveBorders: 0
-          useEdgeSort: 1
-          recalculateNormals: 0
-          aggressiveness: 7
-          maxIterations: 100
-          regardCurvature: 0
-          regardTolerance: 0
-          combineMeshes: 0
-          simplificationOptionsFoldout: 0
-          intensityFoldout: 0
-          clearBlendshapesComplete: 0
-          generateUV2: 0
-          sphereIntensities: []
-        - reductionStrength: 30
-          transitionHeight: 0.4
-          preserveUVFoldover: 0
-          preserveUVSeams: 0
-          preserveBorders: 0
-          useEdgeSort: 1
-          recalculateNormals: 0
-          aggressiveness: 7
-          maxIterations: 100
-          regardCurvature: 0
-          regardTolerance: 0
-          combineMeshes: 0
-          simplificationOptionsFoldout: 0
-          intensityFoldout: 0
-          clearBlendshapesComplete: 0
-          generateUV2: 0
-          sphereIntensities: []
-        - reductionStrength: 60
-          transitionHeight: 0.15
-          preserveUVFoldover: 0
-          preserveUVSeams: 0
-          preserveBorders: 0
-          useEdgeSort: 1
-          recalculateNormals: 0
-          aggressiveness: 7
-          maxIterations: 100
-          regardCurvature: 0
-          regardTolerance: 0
-          combineMeshes: 0
-          simplificationOptionsFoldout: 0
-          intensityFoldout: 0
-          clearBlendshapesComplete: 0
-          generateUV2: 0
-          sphereIntensities: []
-        toleranceSpheres: []
-        lodBackup:
-          rid: -2
-        textureArraysSettings:
-          rid: 8661812530438209539
-        materialsToRestore: []
-        lastObjMaterialLinks: {fileID: 0}
-        relocateMaterialLinks: 0
-        reInitializeTempMatProps: 0
-        choiceTextureMap: 0
-        choiceDiffuseColorSpace: 0
-        batchFewSavePath: 
-        existingTextureArrays: []
-        existingTextureArraysFoldout: 0
-        existingTextureArraysSize: 0
-        textureArraysPropsFoldout: 0
-        existingArraysProps:
-          rid: -2
-        choiceColorSpace: 0
-        preserveBorders: 0
-        preserveUVSeams: 0
-        preserveUVFoldover: 0
-        useEdgeSort: 0
-        recalculateNormals: 0
-        maxIterations: 100
-        aggressiveness: 7
-        regardCurvature: 0
-        considerChildren: 1
-        isPreservationActive: 0
-        sphereDiameter: 0.5
-        oldSphereScale: {x: 0, y: 0, z: 0}
-        reductionStrength: 0
-        reductionPending: 0
-        prevFeasibleTarget: {fileID: 6748341123890221705}
-        runOnThreads: 1
-        triangleCount: 8037
-        lastDrawer: {fileID: 0}
-        foldoutAutoLOD: 0
-        foldoutBatchFew: 1
-        foldoutAutoLODMultiple: 0
-        objPositionPrevFrame: {x: 87.64, y: -10.777781, z: -4.199999}
-        objScalePrevFrame: {x: 1, y: 1, z: 1}
-        considerChildrenBatchFew: 1
-        autoLODSavePath: 
-        foldoutAdditionalOpts: 0
-        generateUV2: 0
-        copyParentStaticFlags: 0
-        copyParentTag: 0
-        copyParentLayer: 0
-        createAsChildren: 0
-        removeLODBackupComponent: 0
-        generateUV2batchfew: 0
-        removeMaterialLinksComponent: 0
-        clearBlendshapesComplete: 0
-        clearBlendshapesNormals: 0
-        clearBlendshapesTangents: 0
-        isPlainSkin: 0
-    - rid: 8661812530438209537
-      type: {class: DataContainer/UndoRedoOps, ns: BrainFailProductions.PolyFew, asm: Assembly-CSharp}
-      data:
-        gameObject: {fileID: 6748341123890221705}
-        undoOperations: []
-        redoOperations: []
-    - rid: 8661812530438209539
-      type: {class: CombiningInformation/TextureArrayGroup, ns: BrainFailProductions.PolyFew,
-        asm: Assembly-CSharp}
-      data:
-        diffuseArraySettings:
-          resolution:
-            width: 512
-            height: 512
-          filteringMode: 0
-          compressionType: 0
-          compressionQuality: 1
-          anisotropicFilteringLevel: 1
-          choiceResolutionW: 4
-          choiceResolutionH: 4
-          choiceFilteringMode: 0
-          choiceCompressionQuality: 1
-          choiceCompressionType: 0
-        metallicArraySettings:
-          resolution:
-            width: 512
-            height: 512
-          filteringMode: 0
-          compressionType: 0
-          compressionQuality: 1
-          anisotropicFilteringLevel: 1
-          choiceResolutionW: 4
-          choiceResolutionH: 4
-          choiceFilteringMode: 0
-          choiceCompressionQuality: 1
-          choiceCompressionType: 0
-        specularArraySettings:
-          resolution:
-            width: 512
-            height: 512
-          filteringMode: 0
-          compressionType: 0
-          compressionQuality: 1
-          anisotropicFilteringLevel: 1
-          choiceResolutionW: 4
-          choiceResolutionH: 4
-          choiceFilteringMode: 0
-          choiceCompressionQuality: 1
-          choiceCompressionType: 0
-        normalArraySettings:
-          resolution:
-            width: 512
-            height: 512
-          filteringMode: 0
-          compressionType: 0
-          compressionQuality: 1
-          anisotropicFilteringLevel: 1
-          choiceResolutionW: 4
-          choiceResolutionH: 4
-          choiceFilteringMode: 0
-          choiceCompressionQuality: 1
-          choiceCompressionType: 0
-        heightArraySettings:
-          resolution:
-            width: 512
-            height: 512
-          filteringMode: 0
-          compressionType: 0
-          compressionQuality: 1
-          anisotropicFilteringLevel: 1
-          choiceResolutionW: 4
-          choiceResolutionH: 4
-          choiceFilteringMode: 0
-          choiceCompressionQuality: 1
-          choiceCompressionType: 0
-        occlusionArraySettings:
-          resolution:
-            width: 512
-            height: 512
-          filteringMode: 0
-          compressionType: 0
-          compressionQuality: 1
-          anisotropicFilteringLevel: 1
-          choiceResolutionW: 4
-          choiceResolutionH: 4
-          choiceFilteringMode: 0
-          choiceCompressionQuality: 1
-          choiceCompressionType: 0
-        emissiveArraySettings:
-          resolution:
-            width: 512
-            height: 512
-          filteringMode: 0
-          compressionType: 0
-          compressionQuality: 1
-          anisotropicFilteringLevel: 1
-          choiceResolutionW: 4
-          choiceResolutionH: 4
-          choiceFilteringMode: 0
-          choiceCompressionQuality: 1
-          choiceCompressionType: 0
-        detailMaskArraySettings:
-          resolution:
-            width: 512
-            height: 512
-          filteringMode: 0
-          compressionType: 0
-          compressionQuality: 1
-          anisotropicFilteringLevel: 1
-          choiceResolutionW: 4
-          choiceResolutionH: 4
-          choiceFilteringMode: 0
-          choiceCompressionQuality: 1
-          choiceCompressionType: 0
-        detailAlbedoArraySettings:
-          resolution:
-            width: 512
-            height: 512
-          filteringMode: 0
-          compressionType: 0
-          compressionQuality: 1
-          anisotropicFilteringLevel: 1
-          choiceResolutionW: 4
-          choiceResolutionH: 4
-          choiceFilteringMode: 0
-          choiceCompressionQuality: 1
-          choiceCompressionType: 0
-        detailNormalArraySettings:
-          resolution:
-            width: 512
-            height: 512
-          filteringMode: 0
-          compressionType: 0
-          compressionQuality: 1
-          anisotropicFilteringLevel: 1
-          choiceResolutionW: 4
-          choiceResolutionH: 4
-          choiceFilteringMode: 0
-          choiceCompressionQuality: 1
-          choiceCompressionType: 0
-    - rid: 8661812530438209550
+    - rid: 8061496770641002582
       type: {class: DataContainer/ObjectMeshPair, ns: BrainFailProductions.PolyFew,
         asm: Assembly-CSharp}
       data:
-        _Buckets: 34000000ffffffffffffffff220000001e000000ffffffffffffffff1a000000000000002e0000000e000000ffffffffffffffff3100000037000000ffffffff080000000b000000ffffffff0400000026000000ffffffffffffffff2b00000011000000ffffffff2900000038000000ffffffff0500000007000000ffffffffffffffff0a0000000d000000ffffffff1900000025000000ffffffff0300000014000000ffffffffffffffff0200000030000000ffffffff2300000033000000ffffffff17000000ffffffffffffffffffffffff2f00000016000000ffffffffffffffff200000003500000027000000ffffffffffffffffffffffff2800000024000000ffffffffffffffff0f000000360000002c000000ffffffffffffffffffffffff2a00000032000000ffffffffffffffff010000001f0000002d000000ffffffffffffffffffffffff09000000ffffffffffffffffffffffff0c000000ffffffff
-        _HashCodes: 340f0100200f01009a0d0100480e0100340e01003e0e0100d80f0100980e0100d80d0100c20d0100900d0100e40e01002a0f01004e0f0100840e0100160f0100f60f0100440f0100f80e0100c80e0100a20e0100020e0100620f0100520e0100b80d0100ec0d0100da0e01000c0e0100a40d0100ae0d0100e20f0100160e01000c0f0100ee0e0100880f0100f60d01006c0f0100aa0f01008e0e01005c0e0100c40f0100e20d0100ce0f0100860d0100660e0100700e01002a0e0100ba0f0100580f0100920f0100760f0100020f01007a0e0100b40e0100be0e0100ec0f0100a00f01000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff06000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff10000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff13000000ffffffffffffffffffffffffffffffffffffffff12000000ffffffffffffffff1d000000ffffffff18000000ffffffffffffffffffffffffffffffff1c000000ffffffffffffffffffffffffffffffffffffffff150000001b000000ffffffff210000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-        _Count: 57
-        _Version: 57
+        _Buckets: 2a00000033000000130000001a0000001e00000003000000ffffffff160000000b00000012000000ffffffff090000000f0000002f000000340000002d00000030000000100000000a00000029000000ffffffff21000000ffffffff1b0000003700000028000000000000002c000000ffffffffffffffff0c0000001f000000ffffffff1c00000011000000ffffffff20000000ffffffff1d0000003600000002000000320000002b00000024000000ffffffff23000000250000000e000000170000000d000000ffffffffffffffff2700000018000000ffffffff05000000ffffffff04000000ffffffffffffffffffffffff22000000ffffffffffffffffffffffff14000000ffffffffffffffffffffffff07000000ffffffff01000000ffffffffffffffffffffffffffffffff150000002e000000ffffffff06000000ffffffffffffffff35000000ffffffff31000000080000002600000019000000ffffffff
+        _HashCodes: d0de0f00a4de0f00dede0f0062de0f0096de0f0094de0f00acde0f00a2de0f00b2de0f0068de0f00c8de0f00bede0f00d4de0f008ede0f008cde0f00c2de0f006ede0f00d8de0f0066de0f00b8de0f009ede0f0050de0f0064de0f00e6de0f0092de0f00b4de0f0060de0f0074de0f007ede0f00dcde0f00bade0f007cde0f00dade0f0072de0f009ade0f008ade0f0088de0f00e4de0f005ade0f00eade0f0076de0f0070de0f00b6de0f00e0de0f0078de0f006cde0f00aade0f006ade0f00c6de0f0058de0f0086de0f005ede0f00c4de0f0056de0f0084de0f00cede0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        _Count: 56
+        _Version: 56
         _FreeList: -1
         _FreeCount: 0
         _Keys:
@@ -1382,7 +1120,6 @@ MonoBehaviour:
         - {fileID: 4777654126023247335}
         - {fileID: 4645101062876545280}
         - {fileID: 6227746630151702873}
-        - {fileID: 4359876409790253686}
         - {fileID: 5633435965363297819}
         - {fileID: 6750692978198033050}
         - {fileID: 693799195849638455}
@@ -1464,6 +1201,7 @@ MonoBehaviour:
         - {fileID: 0}
         - {fileID: 0}
         - {fileID: 0}
+        - {fileID: 0}
         _Values:
         - attachedToMeshFilter: 1
           mesh: {fileID: 2135046272525711327, guid: bbaf8364067cf6544b11f1f47a20c1de,
@@ -1481,8 +1219,6 @@ MonoBehaviour:
           mesh: {fileID: 4300000, guid: 410857ee5753fe94799f4f88e2e1102a, type: 3}
         - attachedToMeshFilter: 1
           mesh: {fileID: 4300000, guid: 002aad209296b1b48bb25b46d18ad50d, type: 3}
-        - attachedToMeshFilter: 1
-          mesh: {fileID: 4300000, guid: 5e747a14339ff7942bcae556683efe19, type: 3}
         - attachedToMeshFilter: 1
           mesh: {fileID: 4300000, guid: 5e747a14339ff7942bcae556683efe19, type: 3}
         - attachedToMeshFilter: 1
@@ -1645,6 +1381,264 @@ MonoBehaviour:
           mesh: {fileID: 0}
         - attachedToMeshFilter: 0
           mesh: {fileID: 0}
+        - attachedToMeshFilter: 0
+          mesh: {fileID: 0}
+    - rid: 8661812530438209536
+      type: {class: DataContainer, ns: BrainFailProductions.PolyFew, asm: Assembly-CSharp}
+      data:
+        objectsHistory:
+          rid: 8661812530438209537
+        objectMeshPairs:
+          rid: 8061496770641002582
+        currentLodLevelSettings:
+        - reductionStrength: 0
+          transitionHeight: 0.6
+          preserveUVFoldover: 0
+          preserveUVSeams: 0
+          preserveBorders: 0
+          useEdgeSort: 1
+          recalculateNormals: 0
+          aggressiveness: 7
+          maxIterations: 100
+          regardCurvature: 0
+          regardTolerance: 0
+          combineMeshes: 0
+          simplificationOptionsFoldout: 0
+          intensityFoldout: 0
+          clearBlendshapesComplete: 0
+          generateUV2: 0
+          sphereIntensities: []
+        - reductionStrength: 30
+          transitionHeight: 0.4
+          preserveUVFoldover: 0
+          preserveUVSeams: 0
+          preserveBorders: 0
+          useEdgeSort: 1
+          recalculateNormals: 0
+          aggressiveness: 7
+          maxIterations: 100
+          regardCurvature: 0
+          regardTolerance: 0
+          combineMeshes: 0
+          simplificationOptionsFoldout: 0
+          intensityFoldout: 0
+          clearBlendshapesComplete: 0
+          generateUV2: 0
+          sphereIntensities: []
+        - reductionStrength: 60
+          transitionHeight: 0.15
+          preserveUVFoldover: 0
+          preserveUVSeams: 0
+          preserveBorders: 0
+          useEdgeSort: 1
+          recalculateNormals: 0
+          aggressiveness: 7
+          maxIterations: 100
+          regardCurvature: 0
+          regardTolerance: 0
+          combineMeshes: 0
+          simplificationOptionsFoldout: 0
+          intensityFoldout: 0
+          clearBlendshapesComplete: 0
+          generateUV2: 0
+          sphereIntensities: []
+        toleranceSpheres: []
+        lodBackup:
+          rid: -2
+        textureArraysSettings:
+          rid: 8661812530438209539
+        materialsToRestore: []
+        lastObjMaterialLinks: {fileID: 0}
+        relocateMaterialLinks: 0
+        reInitializeTempMatProps: 0
+        choiceTextureMap: 0
+        choiceDiffuseColorSpace: 0
+        batchFewSavePath: 
+        existingTextureArrays: []
+        existingTextureArraysFoldout: 0
+        existingTextureArraysSize: 0
+        textureArraysPropsFoldout: 0
+        existingArraysProps:
+          rid: -2
+        choiceColorSpace: 0
+        preserveBorders: 0
+        preserveUVSeams: 0
+        preserveUVFoldover: 0
+        useEdgeSort: 0
+        recalculateNormals: 0
+        maxIterations: 100
+        aggressiveness: 7
+        regardCurvature: 0
+        considerChildren: 1
+        isPreservationActive: 0
+        sphereDiameter: 0.5
+        oldSphereScale: {x: 0, y: 0, z: 0}
+        reductionStrength: 0
+        reductionPending: 0
+        prevFeasibleTarget: {fileID: 6748341123890221705}
+        runOnThreads: 1
+        triangleCount: 7997
+        lastDrawer: {fileID: 0}
+        foldoutAutoLOD: 0
+        foldoutBatchFew: 1
+        foldoutAutoLODMultiple: 0
+        objPositionPrevFrame: {x: 9.3, y: -10.89778, z: 18.2}
+        objScalePrevFrame: {x: 1, y: 1, z: 1}
+        considerChildrenBatchFew: 1
+        autoLODSavePath: 
+        foldoutAdditionalOpts: 0
+        generateUV2: 0
+        copyParentStaticFlags: 0
+        copyParentTag: 0
+        copyParentLayer: 0
+        createAsChildren: 0
+        removeLODBackupComponent: 0
+        generateUV2batchfew: 0
+        removeMaterialLinksComponent: 0
+        clearBlendshapesComplete: 0
+        clearBlendshapesNormals: 0
+        clearBlendshapesTangents: 0
+        isPlainSkin: 0
+    - rid: 8661812530438209537
+      type: {class: DataContainer/UndoRedoOps, ns: BrainFailProductions.PolyFew, asm: Assembly-CSharp}
+      data:
+        gameObject: {fileID: 6748341123890221705}
+        undoOperations: []
+        redoOperations: []
+    - rid: 8661812530438209539
+      type: {class: CombiningInformation/TextureArrayGroup, ns: BrainFailProductions.PolyFew,
+        asm: Assembly-CSharp}
+      data:
+        diffuseArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        metallicArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        specularArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        normalArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        heightArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        occlusionArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        emissiveArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        detailMaskArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        detailAlbedoArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
+        detailNormalArraySettings:
+          resolution:
+            width: 512
+            height: 512
+          filteringMode: 0
+          compressionType: 0
+          compressionQuality: 1
+          anisotropicFilteringLevel: 1
+          choiceResolutionW: 4
+          choiceResolutionH: 4
+          choiceFilteringMode: 0
+          choiceCompressionQuality: 1
+          choiceCompressionType: 0
 --- !u!1 &6750692978198033050 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2779746019931699125, guid: 29a94a16147df5244aa10d327a39dbb1,

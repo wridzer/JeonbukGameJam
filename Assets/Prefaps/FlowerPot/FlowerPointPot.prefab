@@ -99,7 +99,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &761869252001558528
 Transform:
   m_ObjectHideFlags: 0
@@ -319,6 +319,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Flower01 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 203285523326807148, guid: ff6a17996f7796c46836015745ded15f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 691838793752245974, guid: ff6a17996f7796c46836015745ded15f,
         type: 3}

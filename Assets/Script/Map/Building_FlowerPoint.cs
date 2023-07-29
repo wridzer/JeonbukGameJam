@@ -5,12 +5,20 @@ using Sirenix.OdinInspector;
 
 namespace Game.Building
 {
+    public enum EZoneNumber
+    { 
+        one, two, three, four, five
+    }
+
     public class Building_FlowerPoint : SerializedMonoBehaviour
     {
         [TitleGroup("PreDefine")]
         [SerializeField] Transform _showUpTrans;
         [SerializeField] EBuildingProtesterState _state;
         [SerializeField] GameObject _flowerEffectSet;
+        [SerializeField] EZoneNumber _zoneNumber;
+
+        public EZoneNumber ZoneNumber => _zoneNumber;
 
         [TitleGroup("Debug")]
         [SerializeField] Building_Mohter_Common[] _buildingCommons;
@@ -26,6 +34,7 @@ namespace Game.Building
             _buildingCommons = _showUpTrans.GetComponentsInChildren<Building_Mohter_Common>();
             _buildingController = Building_Controller.Instance;
             _buildingController.AddBuildingInList(this, _state);
+            _buildingController.SetZoneFlowerStatePair((int)_zoneNumber, this, _state);
             SetFlowerPointCondition(_state);
         }
 
@@ -49,7 +58,7 @@ namespace Game.Building
                 _buildingCommons[i].UpdateBuildingMaterial(state);
             }
 
-            _buildingController.SetBuildingState(this, state);
+            _buildingController.SetZoneFlowerStatePair((int)_zoneNumber, this, state);
             _settedTime = Time.realtimeSinceStartup;
 
             switch (state)

@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 85ed7d8ddd2b70847a36ae0ebf2c04fc, type: 2}
 --- !u!1001 &90933368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -381,7 +381,7 @@ PrefabInstance:
     - target: {fileID: 7220469166558316313, guid: c5f25418ac87a0c49899eed22a5db91c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -73.29
+      value: -73.5
       objectReference: {fileID: 0}
     - target: {fileID: 7220469166558316313, guid: c5f25418ac87a0c49899eed22a5db91c,
         type: 3}
@@ -391,7 +391,7 @@ PrefabInstance:
     - target: {fileID: 7220469166558316313, guid: c5f25418ac87a0c49899eed22a5db91c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -53.390015
+      value: -53.6
       objectReference: {fileID: 0}
     - target: {fileID: 7220469166558316313, guid: c5f25418ac87a0c49899eed22a5db91c,
         type: 3}
@@ -1753,7 +1753,7 @@ PrefabInstance:
     - target: {fileID: 7220469166558316313, guid: c5f25418ac87a0c49899eed22a5db91c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -73.29
+      value: -73.5
       objectReference: {fileID: 0}
     - target: {fileID: 7220469166558316313, guid: c5f25418ac87a0c49899eed22a5db91c,
         type: 3}
@@ -1763,7 +1763,7 @@ PrefabInstance:
     - target: {fileID: 7220469166558316313, guid: c5f25418ac87a0c49899eed22a5db91c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -53.390015
+      value: -53.6
       objectReference: {fileID: 0}
     - target: {fileID: 7220469166558316313, guid: c5f25418ac87a0c49899eed22a5db91c,
         type: 3}
