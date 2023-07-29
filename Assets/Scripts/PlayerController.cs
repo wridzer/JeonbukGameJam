@@ -1,5 +1,6 @@
 using Game.Building;
 using Game.NPC;
+using MorningBird.Sound;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,17 +13,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float slideForce = 2.0f;
     [SerializeField] private float slideDuration = 1f;
     [SerializeField] private float pickupRadius = 1.0f;  
-    [SerializeField] private Transform pickupPoint;  
+    [SerializeField] private Transform pickupPoint;
+    [SerializeField] MorningBird.Sound.AudioStorage jumpSound, getPointSound;
     private bool isJumping = false;
     private bool isSliding = false;
     private Rigidbody rb;
     private GameObject heldObject = null;
     private float fallMultiplier = 2.5f;
     private float lowJumpMultiplier = 2f;
+    private Animator animator;
 
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        animator = this.GetComponent<Animator>();
         // Confine and hide the cursor
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
@@ -32,6 +36,16 @@ public class PlayerController : MonoBehaviour
     {
         // Calculate the direction of movement based on player input
         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+
+        // Walk animation
+        if (direction.magnitude > 0)
+        {
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
 
         // Adjust the player's velocity while keeping vertical velocity the same
         rb.velocity = transform.TransformDirection(direction) * speed + new Vector3(0, rb.velocity.y, 0);
@@ -45,7 +59,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+            SoundManager.Instance.RequestPlayClip(jumpSound, setFollowTarget : transform);
             isJumping = true;
+            animator.SetTrigger("Jump");
         }
 
         if (rb.velocity.y < 0)
@@ -59,6 +75,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire3") && !isJumping && !isSliding)
         {
+            animator.SetTrigger("Slide");
             StartCoroutine(Slide());
         }
 
@@ -70,6 +87,8 @@ public class PlayerController : MonoBehaviour
 
     private void Pickup()
     {
+        animator.SetTrigger("Plant");
+        StartCoroutine(WaitForPlanting(speed));
         if (heldObject != null)
         {
             // Put down the object
@@ -113,11 +132,21 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Dropoff") && heldObject != null)
         {
             // Drop off the object
+            animator.SetTrigger("Plant");
+            StartCoroutine(WaitForPlanting(speed));
             heldObject.transform.SetParent(null);
             heldObject.transform.localPosition = other.transform.position + new Vector3(0, 1, 0);
             heldObject = null;
             other.GetComponent<Building_FlowerPoint>()?.SetFlowerPointCondition(EBuildingProtesterState.Flower);
             other.GetComponent<Civilion_Common>()?.SetStateOfProtester(ECivilionState.Peace);
+            SoundManager.Instance.RequestPlayClip(getPointSound, setFollowTarget: transform);
         }
+    }
+
+    private IEnumerator WaitForPlanting(float tempSpeed)
+    {
+        speed = 0;
+        yield return new WaitForSeconds(5f);
+        speed = tempSpeed;
     }
 }

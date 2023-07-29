@@ -198,6 +198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5166174930956838439, guid: 3dcb4628a9a723b4ab21d587715c951c,
         type: 3}
+      propertyPath: _soundClipVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166174930956838439, guid: 3dcb4628a9a723b4ab21d587715c951c,
+        type: 3}
       propertyPath: _BGMS.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 7fe4d5b4c50a4e948be9d57fdf625081,
