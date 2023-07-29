@@ -14,8 +14,12 @@ namespace Game.Building
         [TitleGroup("PreDefine")]
         [SerializeField] private Material _stateNoneMat;
         [SerializeField] private Material _stateFlowerMat;
-        [SerializeField] private Material _statePortestMat;
+        [SerializeField] private Material _stateProtestMat;
         [SerializeField] MeshRenderer _meshRenderer;
+
+        [SerializeField] GameObject _noneShowGameObject;
+        [SerializeField] GameObject _flowerShowGameObject;
+        [SerializeField] GameObject _protestShowGameObject;
 
 
 
@@ -54,7 +58,7 @@ namespace Game.Building
                     _meshRenderer.material = _stateFlowerMat;
                     break;
                 case EBuildingProtesterState.Protest:
-                    _meshRenderer.material = _statePortestMat;
+                    _meshRenderer.material = _stateProtestMat;
                     break;
                 default:
                     break;

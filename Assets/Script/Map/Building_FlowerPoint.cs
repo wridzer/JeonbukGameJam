@@ -10,6 +10,7 @@ namespace Game.Building
         [TitleGroup("PreDefine")]
         [SerializeField] Transform _showUpTrans;
         [SerializeField] EBuildingProtesterState _state;
+        [SerializeField] GameObject _flowerEffectSet;
 
         [TitleGroup("Debug")]
         [SerializeField] Building_Mohter_Common[] _buildingCommons;
@@ -50,6 +51,19 @@ namespace Game.Building
 
             _buildingController.SetBuildingState(this, state);
             _settedTime = Time.realtimeSinceStartup;
+
+            switch (state)
+            {
+                case EBuildingProtesterState.None:
+                default:
+                    break;
+                case EBuildingProtesterState.Flower:
+                    _flowerEffectSet.SetActive(true);
+                    break;
+                case EBuildingProtesterState.Protest:
+                    _flowerEffectSet.SetActive(false);
+                    break;
+            }
 
         }
     }

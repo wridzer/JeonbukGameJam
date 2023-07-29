@@ -25,7 +25,7 @@ namespace Game.NPC
 
         [TitleGroup("Debug")]
         [SerializeField] Game.Building.Building_Controller _buildingCon;
-        [SerializeField] Building_Common _selectedBuildingCommon;
+        [SerializeField] Building_FlowerPoint _selectedFlowerPoint;
         [SerializeField] float _innerbuildingProtestingTime;
         [SerializeField] ECivilionState _civilionState = ECivilionState.Protester;
 
@@ -71,14 +71,14 @@ namespace Game.NPC
 
             void FindBuildingAndCheckSame(Collider other)
             {
-                if (other.transform.TryGetComponent<Building_Common>(out Building_Common buildingCommon) == true)
+                if (other.transform.TryGetComponent<Building_FlowerPoint>(out Building_FlowerPoint flowerPoint) == true)
                 {
-                    if (buildingCommon == _selectedBuildingCommon)
+                    if (flowerPoint == _selectedFlowerPoint)
                     {
                         return;
                     }
 
-                    _selectedBuildingCommon = buildingCommon;
+                    _selectedFlowerPoint = flowerPoint;
                     _innerbuildingProtestingTime = _buildingProtestingTime;
                 }
             }
@@ -118,7 +118,7 @@ namespace Game.NPC
 
         private bool CheckTimeIsDone()
         {
-            if (_selectedBuildingCommon == null)
+            if (_selectedFlowerPoint == null)
                 return false;
 
             if (_innerbuildingProtestingTime > 0)
