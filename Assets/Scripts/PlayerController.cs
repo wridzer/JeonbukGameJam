@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
             if (hitColliders.Length > 0)
             {
                 if(speed != 0)
-                    StartCoroutine(WaitForAnim(speed, 5f));
+                    StartCoroutine(WaitForAnim(speed, 1.5f));
                 heldObject = hitColliders[0].gameObject;
                 StartCoroutine(WaitForPickup());
             }
@@ -138,14 +138,14 @@ public class PlayerController : MonoBehaviour
         {
             // Drop off the object
             animator.SetTrigger("Plant");
-            StartCoroutine(WaitForAnim(speed, 5f));
+            StartCoroutine(WaitForAnim(speed, 1.5f));
             StartCoroutine(WaitForPutDown(other.gameObject));
         }
     }
 
     private IEnumerator WaitForPutDown(GameObject other)
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1f);
         heldObject.transform.SetParent(null);
         heldObject.transform.localPosition = other.transform.position + new Vector3(0, 1, 0);
         heldObject = null;
@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator WaitForPickup()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1f);
         heldObject.GetComponentInParent<PlantSpawner>()?.PlantRemoved();
         heldObject.transform.SetParent(pickupPoint);
         heldObject.transform.localPosition = Vector3.zero;
@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator WaitForAnim(float tempSpeed, float duration)
     {
         speed = 0;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(duration);
         speed = tempSpeed;
     }
 }
