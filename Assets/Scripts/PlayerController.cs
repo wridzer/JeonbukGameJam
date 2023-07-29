@@ -1,15 +1,17 @@
+using Game.Building;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 10.0f;
-    public float rotationSpeed = 100.0f;
-    public float jumpForce = 5.0f;
-    public float slideForce = 2.0f;
-    public float pickupRadius = 1.0f;  // Radius for the SphereCast
-    public Transform pickupPoint;  // assign in Inspector
+    [SerializeField] private float speed = 10.0f;
+    [SerializeField] private float rotationSpeed = 100.0f;
+    [SerializeField] private float jumpForce = 5.0f;
+    [SerializeField] private float slideForce = 2.0f;
+    [SerializeField] private float slideDuration = 1f;
+    [SerializeField] private float pickupRadius = 1.0f;  
+    [SerializeField] private Transform pickupPoint;  
     private bool isJumping = false;
     private bool isSliding = false;
     private Rigidbody rb;
@@ -27,8 +29,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // float forwardTranslation = Input.GetAxis("Vertical") * speed;
-        // float horizontalTranslation = Input.GetAxis("Horizontal") * speed;
         // Calculate the direction of movement based on player input
         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
 
@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour
         rotation *= Time.deltaTime;
 
         Quaternion turn = Quaternion.Euler(0f, rotation, 0f);
-        // rb.MovePosition(rb.position + this.transform.forward * forwardTranslation + this.transform.right * horizontalTranslation);
         rb.MoveRotation(rb.rotation * turn);
 
         if (Input.GetButtonDown("Jump") && !isJumping)
@@ -64,22 +63,28 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (heldObject != null)
+            Pickup();
+        }
+    }
+
+    private void Pickup()
+    {
+        if (heldObject != null)
+        {
+            // Put down the object
+            heldObject.transform.SetParent(null);
+            heldObject = null;
+        }
+        else
+        {
+            // Pick up an object
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, pickupRadius, LayerMask.GetMask("Pickup"));
+            if (hitColliders.Length > 0)
             {
-                // Put down the object
-                heldObject.transform.SetParent(null);
-                heldObject = null;
-            }
-            else
-            {
-                // Pick up an object
-                Collider[] hitColliders = Physics.OverlapSphere(transform.position, pickupRadius, LayerMask.GetMask("Pickup"));
-                if (hitColliders.Length > 0)
-                {
-                    heldObject = hitColliders[0].gameObject;
-                    heldObject.transform.SetParent(pickupPoint);
-                    heldObject.transform.localPosition = Vector3.zero;
-                }
+                heldObject = hitColliders[0].gameObject;
+                heldObject.GetComponentInParent<PlantSpawner>()?.PlantRemoved();
+                heldObject.transform.SetParent(pickupPoint);
+                heldObject.transform.localPosition = Vector3.zero;
             }
         }
     }
@@ -89,7 +94,7 @@ public class PlayerController : MonoBehaviour
         isSliding = true;
 
         rb.AddForce(transform.forward * slideForce, ForceMode.Impulse);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(slideDuration);
 
         isSliding = false;
     }
@@ -110,6 +115,7 @@ public class PlayerController : MonoBehaviour
             heldObject.transform.SetParent(null);
             heldObject.transform.localPosition = other.transform.position + new Vector3(0, 1, 0);
             heldObject = null;
+            other.GetComponent<Building_FlowerPoint>()?.SetFlowerPointCondition(EBuildingProtesterState.Flower);
         }
     }
 }
