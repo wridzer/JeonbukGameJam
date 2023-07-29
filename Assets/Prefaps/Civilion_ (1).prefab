@@ -1351,7 +1351,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 4.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &4663719597123437691
 NavMeshAgent:
@@ -1399,7 +1399,7 @@ MonoBehaviour:
   _navMeshAgent: {fileID: 0}
   _buildingProtestingTime: 5
   _buildingCon: {fileID: 0}
-  _selectedBuildingCommon: {fileID: 0}
+  _selectedFlowerPoint: {fileID: 0}
   _innerbuildingProtestingTime: 0
   _civilionState: 1
   _isNPCReachToBuilding: 0

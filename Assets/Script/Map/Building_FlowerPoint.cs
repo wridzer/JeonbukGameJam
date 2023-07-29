@@ -56,6 +56,7 @@ namespace Game.Building
             {
                 case EBuildingProtesterState.None:
                 default:
+                    _flowerEffectSet.SetActive(false);
                     break;
                 case EBuildingProtesterState.Flower:
                     _flowerEffectSet.SetActive(true);
