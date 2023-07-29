@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float slideForce = 2.0f;
     [SerializeField] private float slideDuration = 1f;
     [SerializeField] private float pickupRadius = 1.0f;  
+    [SerializeField] private Transform feet;  
     [SerializeField] private Transform pickupPoint;
     [SerializeField] MorningBird.Sound.AudioStorage jumpSound, getPointSound;
     private bool isJumping = false;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private float fallMultiplier = 2.5f;
     private float lowJumpMultiplier = 2f;
     private Animator animator;
+    private bool checkPlayerGrounded;
 
     void Start()
     {
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
             SoundManager.Instance.RequestPlayClip(jumpSound, setFollowTarget : transform);
             isJumping = true;
             animator.SetTrigger("Jump");
+            StartCoroutine(jumpCheckDelay());
         }
 
         if (rb.velocity.y < 0)
@@ -89,6 +92,11 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("Dance");
             StartCoroutine(WaitForAnim(speed, 2f));
         }
+
+        if (isJumping && checkPlayerGrounded)
+        {
+            TestIfGrounded();
+        }
     }
 
     private void Pickup()
@@ -107,11 +115,30 @@ public class PlayerController : MonoBehaviour
             if (hitColliders.Length > 0)
             {
                 if(speed != 0)
-                    StartCoroutine(WaitForAnim(speed, 1.5f));
+                    StartCoroutine(WaitForAnim(speed, 1f));
                 heldObject = hitColliders[0].gameObject;
                 StartCoroutine(WaitForPickup());
             }
         }
+    }
+
+    private void TestIfGrounded()
+    {
+        RaycastHit hit;
+        if(Physics.Raycast(feet.position, Vector3.down, out hit, 0.05f))
+        {
+            if(hit.transform.tag == "Ground")
+            {
+                isJumping = false;
+                checkPlayerGrounded = false;
+            }
+        }
+    }
+
+    IEnumerator jumpCheckDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        checkPlayerGrounded = true;
     }
 
     IEnumerator Slide()
@@ -129,6 +156,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
+            checkPlayerGrounded=false;
         }
     }
 
@@ -138,16 +166,17 @@ public class PlayerController : MonoBehaviour
         {
             // Drop off the object
             animator.SetTrigger("Plant");
-            StartCoroutine(WaitForAnim(speed, 1.5f));
+            StartCoroutine(WaitForAnim(speed, 0.5f));
             StartCoroutine(WaitForPutDown(other.gameObject));
         }
     }
 
     private IEnumerator WaitForPutDown(GameObject other)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         heldObject.transform.SetParent(null);
         heldObject.transform.localPosition = other.transform.position + new Vector3(0, 1, 0);
+        Destroy(heldObject);
         heldObject = null;
         other.GetComponent<Building_FlowerPoint>()?.SetFlowerPointCondition(EBuildingProtesterState.Flower);
         other.GetComponent<Civilion_Common>()?.SetStateOfProtester(ECivilionState.Peace);
@@ -156,10 +185,17 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator WaitForPickup()
     {
-        yield return new WaitForSeconds(1f);
-        heldObject.GetComponentInParent<PlantSpawner>()?.PlantRemoved();
-        heldObject.transform.SetParent(pickupPoint);
-        heldObject.transform.localPosition = Vector3.zero;
+        if (!heldObject)
+        {
+            yield return null;
+        }
+        else
+        {
+            yield return new WaitForSeconds(1f);
+            heldObject.GetComponentInParent<PlantSpawner>()?.PlantRemoved();
+            heldObject.transform.SetParent(pickupPoint);
+            heldObject.transform.localPosition = Vector3.zero;
+        }
     }
 
     private IEnumerator WaitForAnim(float tempSpeed, float duration)
