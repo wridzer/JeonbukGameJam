@@ -175,7 +175,6 @@ namespace Game.NPC
             Building.Building_FlowerPoint[] listOfBuilding = _buildingCon.GetStateBuildings(Building.EBuildingProtesterState.Protest);
             Building.Building_FlowerPoint oneBuilding = listOfBuilding[Random.Range(0, listOfBuilding.Length)];
             Vector3 destinationPosition = oneBuilding.transform.position;
-            destinationPosition.y = 0;
 
             _navMeshAgent.SetDestination(destinationPosition);
         }
