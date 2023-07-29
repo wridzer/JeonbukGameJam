@@ -4,6 +4,8 @@ using UnityEngine;
 using MorningBird;
 using Sirenix.OdinInspector;
 using System.Linq;
+using TMPro.EditorUtilities;
+using TMPro;
 
 namespace Game.Building
 {
@@ -18,9 +20,124 @@ namespace Game.Building
         {
             instance = this;
         }
+        
 
         [TitleGroup("Debug")]
         [SerializeField] Dictionary<Building_FlowerPoint, EBuildingProtesterState> _flowerStatePair = new Dictionary<Building_FlowerPoint, EBuildingProtesterState>(500);
+
+        [SerializeField] Dictionary<Building_FlowerPoint, EBuildingProtesterState> _zoneOneFlowerStatePair = new Dictionary<Building_FlowerPoint, EBuildingProtesterState>(200);
+        [SerializeField] Dictionary<Building_FlowerPoint, EBuildingProtesterState> _zoneTwoFlowerStatePair = new Dictionary<Building_FlowerPoint, EBuildingProtesterState>(200);
+        [SerializeField] Dictionary<Building_FlowerPoint, EBuildingProtesterState> _zoneThreeFlowerStatePair = new Dictionary<Building_FlowerPoint, EBuildingProtesterState>(200);
+        [SerializeField] Dictionary<Building_FlowerPoint, EBuildingProtesterState> _zoneFourFlowerStatePair = new Dictionary<Building_FlowerPoint, EBuildingProtesterState>(200);
+        [SerializeField] Dictionary<Building_FlowerPoint, EBuildingProtesterState> _zoneFiveFlowerStatePair = new Dictionary<Building_FlowerPoint, EBuildingProtesterState>(200);
+
+        [SerializeField] Building_FlowerPoint _dumpFlowerPoint = new Building_FlowerPoint();
+        public Building_FlowerPoint DumpFlowerPoint => _dumpFlowerPoint;
+
+        [FoldoutGroup("CheckingZone")]
+        [SerializeField] float _checkingTimeForZoneComplite = 2f;
+        [SerializeField] float _innerCheckingTimeForZoneComplite = 0f;
+        [SerializeField] bool[] _zoneComplitingState = new bool[5];
+
+        public Dictionary<Building_FlowerPoint, EBuildingProtesterState> GetZoneFlowerStatePair(int zoneNumber)
+        {
+            switch (zoneNumber)
+            {
+                default:
+                    Debug.Assert(false);
+                    return _zoneOneFlowerStatePair;
+                case 0: return _zoneOneFlowerStatePair;
+                case 1: return _zoneTwoFlowerStatePair;
+                case 2: return _zoneThreeFlowerStatePair;
+                case 3: return _zoneFourFlowerStatePair;
+                case 4: return _zoneFiveFlowerStatePair;
+            }
+        }
+
+        public void SetZoneFlowerStatePair(int zoneNumber, Building_FlowerPoint flowerPoint, EBuildingProtesterState buildingState)
+        {
+            var t_dic = GetZoneFlowerStatePair(zoneNumber);
+            t_dic[flowerPoint] = buildingState;
+        }
+
+        public void RegistZoneFlowerStatePair(int zoneNumber, Building_FlowerPoint flowerPoint, EBuildingProtesterState buildingState)
+        {
+            switch (zoneNumber)
+            {
+                default:
+                    Debug.Assert(false);
+                    _zoneOneFlowerStatePair.Add(flowerPoint, buildingState);
+                    break;
+                case 0: _zoneOneFlowerStatePair.Add(flowerPoint, buildingState); 
+                    break;
+                case 1: _zoneTwoFlowerStatePair.Add(flowerPoint, buildingState);
+                    break;
+                case 2: _zoneThreeFlowerStatePair.Add(flowerPoint, buildingState);
+                    break;
+                case 3: _zoneFourFlowerStatePair.Add(flowerPoint, buildingState);
+                    break;
+                case 4: _zoneFiveFlowerStatePair.Add(flowerPoint, buildingState);
+                    break;
+            }
+        }
+
+        public void DeleteZoneFlowerStatePair(int zoneNumber, Building_FlowerPoint flowerPoint)
+        {
+            switch (zoneNumber)
+            {
+                default:
+                    Debug.Assert(false);
+                    _zoneOneFlowerStatePair.Remove(flowerPoint);
+                    break;
+                case 0:
+                    _zoneOneFlowerStatePair.Remove(flowerPoint);
+                    break;
+                case 1:
+                    _zoneTwoFlowerStatePair.Remove(flowerPoint);
+                    break;
+                case 2:
+                    _zoneThreeFlowerStatePair.Remove(flowerPoint);
+                    break;
+                case 3:
+                    _zoneFourFlowerStatePair.Remove(flowerPoint);
+                    break;
+                case 4:
+                    _zoneFiveFlowerStatePair.Remove(flowerPoint);
+                    break;
+            }
+        }
+
+        public void GetZoneFlowerStatePair(int zoneNumber, out Building_FlowerPoint[] flowerPoint, out EBuildingProtesterState[] buildingState)
+        {
+
+            var t_dic = GetZoneFlowerStatePair(zoneNumber);
+            flowerPoint = t_dic.Keys.ToArray();
+            buildingState = t_dic.Values.ToArray();
+
+        }
+
+        public bool IsZoneComplite(int zoneNumber)
+        {
+            return _zoneComplitingState[zoneNumber];
+        }
+
+        public void SetZoneCompolite(int zoneNumber, bool state)
+        {
+            _zoneComplitingState[zoneNumber] = state;
+        }
+
+        public bool IsAllZoneComplite()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (IsZoneComplite(i) == false)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
 
         public Dictionary<Building_FlowerPoint, EBuildingProtesterState> FlowerPointPairs => _flowerStatePair;
 
@@ -102,6 +219,50 @@ namespace Game.Building
         public void DeleteBuildingInList(Building_FlowerPoint flowerPoint)
         {
             _flowerStatePair.Remove(flowerPoint);
+        }
+
+
+        private void Update()
+        {
+            bool CheckInnerTimeForZoneComplite()
+            {
+                if (_innerCheckingTimeForZoneComplite > 0)
+                {
+                    _innerCheckingTimeForZoneComplite -= Time.deltaTime;
+                    return false;
+                }
+
+                _innerCheckingTimeForZoneComplite = _checkingTimeForZoneComplite;
+                return true;
+            }
+            if(CheckInnerTimeForZoneComplite() == false)
+            {
+                return;
+            }
+
+            bool CheckZoneIsComplite()
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    var zoneFlowerStatePair = GetZoneFlowerStatePair(i);
+                    if(zoneFlowerStatePair == null || zoneFlowerStatePair.Count == 0)
+                    {
+                        SetZoneCompolite(i, true);
+                    }
+
+                    foreach (KeyValuePair<Building_FlowerPoint, EBuildingProtesterState> flowerStatePair in zoneFlowerStatePair)
+                    {
+                        if (flowerStatePair.Value == EBuildingProtesterState.None || flowerStatePair.Value == EBuildingProtesterState.Protest)
+                        {
+                            return false;
+                        }
+                    }
+                    SetZoneCompolite(i, true);
+                }
+                return true;
+            }
+            CheckZoneIsComplite();
+
         }
 
 

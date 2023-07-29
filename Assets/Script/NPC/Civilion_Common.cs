@@ -7,6 +7,7 @@ using UnityEngine.AI;
 using Unity.Mathematics;
 using Random = UnityEngine.Random;
 using Game.Building;
+using System;
 
 namespace Game.NPC
 {
@@ -21,6 +22,8 @@ namespace Game.NPC
         [TitleGroup("PreDefine")]
         [SerializeField] NavMeshAgent _navMeshAgent;
         [SerializeField] float _buildingProtestingTime = 5f;
+        [SerializeField] float _buildingProtestingAfterWaitTime = 5f;
+        [SerializeField] Vector3 _initializePosition = Vector3.zero;
 
 
         [TitleGroup("Debug")]
@@ -33,6 +36,10 @@ namespace Game.NPC
         [SerializeField] float _destinationDistance;
         [SerializeField] float _navMeshMagnitude;
         [SerializeField] float _transformMagnitude;
+
+        [SerializeField] EZoneNumber _zoneNumber;
+
+        [SerializeField] bool _isSettedEndDestination;
 
 
 
@@ -59,10 +66,21 @@ namespace Game.NPC
         void Update()
         {
 
-            if(CheckReachToBuilding() == true && CheckTimeIsDone() == true)
+            if(_isSettedEndDestination == false)
             {
-                DoProtestingWork();
+                if(CheckReachToBuilding() == true && CheckTimeIsDone() == true)
+                {
+                    DoProtestingWork();
+                }
             }
+            else // _isSettedEndDestination == true
+            {
+                if (CheckReachToBuilding() == true && CheckTimeIsDone() == true)
+                {
+                    Destroy(this.gameObject);
+                }
+            }
+
         }
 
 
@@ -151,13 +169,13 @@ namespace Game.NPC
         private void ProtestToFlowerPooint()
         {
             Collider[] collliders = Physics.OverlapSphere(transform.position, 5f);
-            Building_FlowerPoint t_buildingCommon;
+            Building_FlowerPoint t_flowerPoint;
 
             for (int i = 0; i < collliders.Length; i++)
             {
-                if(collliders[i].TryGetComponent<Building_FlowerPoint>(out t_buildingCommon) == true)
+                if(collliders[i].TryGetComponent<Building_FlowerPoint>(out t_flowerPoint) == true)
                 {
-                    t_buildingCommon.SetFlowerPointCondition(EBuildingProtesterState.Protest);
+                    t_flowerPoint.SetFlowerPointCondition(EBuildingProtesterState.Protest);
                     break;
                 }
             }
@@ -167,7 +185,7 @@ namespace Game.NPC
                 Debug.LogError("Time for building is exceed");
             }
 
-            StartCoroutine(IEWaitSetDestination(5f));
+            StartCoroutine(IEWaitSetDestination(_buildingProtestingAfterWaitTime));
 
         }
 
@@ -184,23 +202,136 @@ namespace Game.NPC
         [Button]
         private void SetDestination()
         {
-            Building.Building_FlowerPoint[] listOfBuilding = _buildingCon.GetFlowerPointForProtester();
+            // 0. Initialize
+            {
+                StopCoroutine(IECheckIsZoneComplite());
+            }
 
-            if( listOfBuilding.Length <= 0 ) 
-            { 
-                _navMeshAgent.SetDestination(Vector3.zero);
-                StartCoroutine(IEWaitSetDestination(10f));
-                return;
+            // is all zone Cleared
+            {
+                if(_buildingCon.IsAllZoneComplite() == true)
+                { 
+                    SetDestinationToEnd();
+                    return;
+                }
+            }
+
+            _zoneNumber = EZoneNumber.one;
+
+            // is selected zone is complited
+            {
+                bool find = false;
+                // Random Selection
+                for (int i = 0; i < 20; i++)
+                {
+                    _zoneNumber = (EZoneNumber)Random.Range(0, 5);
+
+                    if (_buildingCon.IsZoneComplite((int)_zoneNumber) == false)
+                    {
+                        find = true;
+                        break;
+                    }
+                }
+
+                // Pick Selection
+                if(find == false)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        if (_buildingCon.IsZoneComplite(i) == false)
+                        {
+                            _zoneNumber = (EZoneNumber)i;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            Building_FlowerPoint flowerPoint = _buildingCon.DumpFlowerPoint;
+
+            // Set Destination
+            {
+                // if zone don't have any flower point
+                if (_buildingCon.GetZoneFlowerStatePair((int)_zoneNumber).Count == 0)
+                {
+                    SetDestination();
+                }
+
+                _buildingCon.GetZoneFlowerStatePair((int)_zoneNumber, out var flowerPoints, out var buildingState);
+
+                // find CaptureAble Building
+                {
+                    // Find with Random
+                    for (int i = 0; i < buildingState.Length; i++)
+                    {
+                        int random = Random.Range(0, buildingState.Length);
+
+                        if (buildingState[random] == EBuildingProtesterState.None || buildingState[random] == EBuildingProtesterState.Flower)
+                        {
+                            flowerPoint = flowerPoints[random];
+                            break;
+                        }
+
+                    }
+
+                    // Must Find
+                    for (int i = 0; i < buildingState.Length; i++)
+                    {
+                        if(buildingState[i] == EBuildingProtesterState.None || buildingState[i] == EBuildingProtesterState.Flower)
+                        {
+                            flowerPoint = flowerPoints[i];
+                            break;
+                        }
+                    }
+                }
 
             }
 
-            Building.Building_FlowerPoint oneBuilding = listOfBuilding[Random.Range(0, listOfBuilding.Length)];
+            if(flowerPoint == _buildingCon.DumpFlowerPoint)
+            {
+                return;
+            }
 
-            Vector3 destinationPosition = oneBuilding.transform.position;
-            destinationPosition.y = 0;
+            // Set Destination
+            {
+                StartCoroutine(IECheckIsZoneComplite());
+
+                Vector3 destinationPosition = flowerPoint.transform.position;
+                _innerbuildingProtestingTime = _buildingProtestingTime;
+
+                _navMeshAgent.SetDestination(destinationPosition);
+            }
+
+
+        }
+
+        IEnumerator IECheckIsZoneComplite()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(2f);
+
+                bool isZoneComplite = _buildingCon.IsZoneComplite((int)_zoneNumber);
+
+                if(isZoneComplite == true)
+                {
+                    SetDestination();
+                }
+
+            }
+        }
+
+        private void SetDestinationToInitilize()
+        {
+            _navMeshAgent.SetDestination(Vector3.zero);
             _innerbuildingProtestingTime = _buildingProtestingTime;
+        }
 
-            _navMeshAgent.SetDestination(destinationPosition);
+        private void SetDestinationToEnd()
+        {
+            _navMeshAgent.SetDestination(Vector3.zero);
+            _innerbuildingProtestingTime = _buildingProtestingTime;
+            _isSettedEndDestination = true;
         }
 
     } 
