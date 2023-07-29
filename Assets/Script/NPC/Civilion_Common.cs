@@ -41,6 +41,8 @@ namespace Game.NPC
 
         [SerializeField] bool _isSettedEndDestination;
 
+        [SerializeField] bool _isCalledIEA;
+
 
 
         void Start()
@@ -61,6 +63,7 @@ namespace Game.NPC
         {
             yield return new WaitForSeconds(waitTime);
             SetDestination();
+            _isCalledIEA = false;
         }
 
         void Update()
@@ -70,7 +73,11 @@ namespace Game.NPC
             {
                 if(CheckReachToBuilding() == true && CheckTimeIsDone() == true)
                 {
-                    DoProtestingWork();
+                    if(_isCalledIEA == false)
+                    {
+                        DoProtestingWork();
+
+                    }
                 }
             }
             else // _isSettedEndDestination == true
@@ -185,7 +192,13 @@ namespace Game.NPC
                 Debug.LogError("Time for building is exceed");
             }
 
-            StartCoroutine(IEWaitSetDestination(_buildingProtestingAfterWaitTime));
+            if(_isCalledIEA == false)
+            {
+                StartCoroutine(IEWaitSetDestination(_buildingProtestingAfterWaitTime));
+                _isCalledIEA = true;
+
+            }
+
 
         }
 
@@ -275,14 +288,18 @@ namespace Game.NPC
                     }
 
                     // Must Find
-                    for (int i = 0; i < buildingState.Length; i++)
+                    if(flowerPoint == _buildingCon.DumpFlowerPoint)
                     {
-                        if(buildingState[i] == EBuildingProtesterState.None || buildingState[i] == EBuildingProtesterState.Flower)
+                        for (int i = 0; i < buildingState.Length; i++)
                         {
-                            flowerPoint = flowerPoints[i];
-                            break;
+                            if (buildingState[i] == EBuildingProtesterState.None || buildingState[i] == EBuildingProtesterState.Flower)
+                            {
+                                flowerPoint = flowerPoints[i];
+                                break;
+                            }
                         }
                     }
+
                 }
 
             }
