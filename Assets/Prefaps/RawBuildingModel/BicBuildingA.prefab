@@ -406,7 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6955084498905475417}
   m_Layer: 0
-  m_Name: BasicBuildingLong
+  m_Name: BicBuildingA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
