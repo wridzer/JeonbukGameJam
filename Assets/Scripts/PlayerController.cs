@@ -83,12 +83,17 @@ public class PlayerController : MonoBehaviour
         {
             Pickup();
         }
+
+        if(Input.GetKeyDown(KeyCode.F)) 
+        {
+            animator.SetTrigger("Dance");
+            StartCoroutine(WaitForAnim(speed, 2f));
+        }
     }
 
     private void Pickup()
     {
         animator.SetTrigger("Plant");
-        StartCoroutine(WaitForPlanting(speed));
         if (heldObject != null)
         {
             // Put down the object
@@ -101,6 +106,8 @@ public class PlayerController : MonoBehaviour
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, pickupRadius, LayerMask.GetMask("Pickup"));
             if (hitColliders.Length > 0)
             {
+                if(speed != 0)
+                    StartCoroutine(WaitForAnim(speed, 5f));
                 heldObject = hitColliders[0].gameObject;
                 heldObject.GetComponentInParent<PlantSpawner>()?.PlantRemoved();
                 heldObject.transform.SetParent(pickupPoint);
@@ -129,11 +136,11 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Dropoff") && heldObject != null)
+        if (other.gameObject.CompareTag("Dropoff") && heldObject != null && speed != 0)
         {
             // Drop off the object
             animator.SetTrigger("Plant");
-            StartCoroutine(WaitForPlanting(speed));
+            StartCoroutine(WaitForAnim(speed, 5f));
             heldObject.transform.SetParent(null);
             heldObject.transform.localPosition = other.transform.position + new Vector3(0, 1, 0);
             heldObject = null;
@@ -143,7 +150,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitForPlanting(float tempSpeed)
+    private IEnumerator WaitForAnim(float tempSpeed, float duration)
     {
         speed = 0;
         yield return new WaitForSeconds(5f);

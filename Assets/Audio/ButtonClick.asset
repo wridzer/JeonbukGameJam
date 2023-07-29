@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _name: 
+  _name: ButtonClick
   _audioClip: {fileID: 0}
   _bypassEffects: 0
   _bypassListenerEffects: 0
@@ -31,7 +31,7 @@ MonoBehaviour:
   _volume: 0.75
   _pitch: 1
   _stereoPan: 0
-  _spatialBlend: 1
+  _spatialBlend: 0
   _reverbZoneMix: 1
   _dopplerLevel: 0
   _spread: 0
