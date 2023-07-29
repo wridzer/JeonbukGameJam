@@ -46,6 +46,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Buildings_Rail_5x1_01P
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 73282c0f90bcc6a45bf711cbfe956e50, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 73282c0f90bcc6a45bf711cbfe956e50, type: 3}
       propertyPath: m_LocalScale.y
       value: 5
@@ -147,6 +151,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4271e1f51cf274c499b8283b04da0c03, type: 3}
       propertyPath: m_Name
       value: SM_Buildings_Block_1x1_01P
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4271e1f51cf274c499b8283b04da0c03, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4271e1f51cf274c499b8283b04da0c03, type: 3}
       propertyPath: m_LocalScale.x
@@ -254,6 +262,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 73282c0f90bcc6a45bf711cbfe956e50, type: 3}
       propertyPath: m_Name
       value: SM_Buildings_Rail_5x1_01P (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 73282c0f90bcc6a45bf711cbfe956e50, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 73282c0f90bcc6a45bf711cbfe956e50, type: 3}
       propertyPath: m_LocalScale.y
