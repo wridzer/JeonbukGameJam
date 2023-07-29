@@ -5,19 +5,21 @@ using UnityEngine;
 
 public class ToggleProtestor : MonoBehaviour
 {
-    [SerializeField] private GameObject sign, flower, sadFace, happyFace;
+    [SerializeField] private GameObject sign, sign2, flower, sadFace, happyFace;
 
     public void OnToggleProtestor(ECivilionState state)
     {
         if (state == ECivilionState.Peace)
         {
             sign.SetActive(false);
+            sign2?.SetActive(false);
             flower.SetActive(true);
             sadFace.SetActive(false);
             happyFace.SetActive(true);
         } else
         {
             sign.SetActive(true);
+            sign2?.SetActive(true);
             flower.SetActive(false);
             sadFace.SetActive(true);
             happyFace.SetActive(false);
