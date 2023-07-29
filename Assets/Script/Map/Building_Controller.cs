@@ -59,6 +59,28 @@ namespace Game.Building
             }
         }
 
+        public Building_FlowerPoint[] GetFlowerPointForProtester()
+        {
+            List<Building_FlowerPoint> t_buildlings = new List<Building_FlowerPoint>(500);
+            Building_FlowerPoint[] t_keys = _flowerStatePair.Keys.ToArray();
+
+            Find(EBuildingProtesterState.None);
+            Find(EBuildingProtesterState.Flower);
+
+            return t_buildlings.ToArray();
+
+            void Find(EBuildingProtesterState state)
+            {
+                for (int i = 0; i < _flowerStatePair.Count; i++)
+                {
+                    if (_flowerStatePair[t_keys[i]] == state)
+                    {
+                        t_buildlings.Add(t_keys[i]);
+                    }
+                }
+            }
+        }
+
 
         public void SetBuildingState(Building_FlowerPoint flowerPoint, EBuildingProtesterState state)
         {

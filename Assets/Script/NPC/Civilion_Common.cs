@@ -45,12 +45,12 @@ namespace Game.NPC
 
             _buildingCon = Game.Building.Building_Controller.Instance;
 
-            StartCoroutine(IERFD());
+            StartCoroutine(IEWaitSetDestination(3f));
         }
 
-        IEnumerator IERFD()
+        IEnumerator IEWaitSetDestination(float waitTime)
         {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(waitTime);
             SetDestination();
         }
 
@@ -160,12 +160,12 @@ namespace Game.NPC
                 }
             }
 
-            if(_innerbuildingProtestingTime < 1f)
+            if(_innerbuildingProtestingTime > 1f)
             {
                 Debug.LogError("Time for building is exceed");
             }
 
-            StartCoroutine(IERFD());
+            StartCoroutine(IEWaitSetDestination(5f));
 
         }
 
@@ -183,10 +183,21 @@ namespace Game.NPC
         [Button]
         private void SetDestination()
         {
-            Building.Building_FlowerPoint[] listOfBuilding = _buildingCon.GetStateBuildings(Building.EBuildingProtesterState.None);
+            Building.Building_FlowerPoint[] listOfBuilding = _buildingCon.GetFlowerPointForProtester();
+
+            if( listOfBuilding.Length <= 0 ) 
+            { 
+                _navMeshAgent.SetDestination(Vector3.zero);
+                StartCoroutine(IEWaitSetDestination(10f));
+                return;
+
+            }
+
             Building.Building_FlowerPoint oneBuilding = listOfBuilding[Random.Range(0, listOfBuilding.Length)];
+
             Vector3 destinationPosition = oneBuilding.transform.position;
             destinationPosition.y = 0;
+            _innerbuildingProtestingTime = _buildingProtestingTime;
 
             _navMeshAgent.SetDestination(destinationPosition);
         }
