@@ -19,6 +19,7 @@ namespace Game.Building
         [SerializeField] EZoneNumber _zoneNumber;
 
         public EZoneNumber ZoneNumber => _zoneNumber;
+        public EZoneNumber SetZoneNumber { set { _zoneNumber = value; } }
 
         [TitleGroup("Debug")]
         [SerializeField] Building_Mohter_Common[] _buildingCommons;
