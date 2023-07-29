@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.17292523, g: 0.21610913, b: 0.29807818, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -991,7 +991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1917506410
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1090,6 +1090,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FlowerPot Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3912837505110601443, guid: 0f527c6ac09845946be262a67b75e6f7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4397448747374687321, guid: 0f527c6ac09845946be262a67b75e6f7,
         type: 3}

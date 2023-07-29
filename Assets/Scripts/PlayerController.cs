@@ -192,8 +192,8 @@ public class PlayerController : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(1f);
-            heldObject.GetComponentInParent<PlantSpawner>()?.PlantRemoved();
-            heldObject.transform.SetParent(pickupPoint);
+            heldObject?.GetComponentInParent<PlantSpawner>().PlantRemoved();
+            heldObject?.transform.SetParent(pickupPoint);
             heldObject.transform.localPosition = Vector3.zero;
         }
     }
