@@ -25,6 +25,7 @@ namespace Game.Building
             _buildingCommons = _showUpTrans.GetComponentsInChildren<Building_Mohter_Common>();
             _buildingController = Building_Controller.Instance;
             _buildingController.AddBuildingInList(this, _state);
+            SetFlowerPointCondition(_state);
         }
 
         // Update is called once per frame
