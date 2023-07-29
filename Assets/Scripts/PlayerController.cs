@@ -1,4 +1,5 @@
 using Game.Building;
+using Game.NPC;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -116,6 +117,7 @@ public class PlayerController : MonoBehaviour
             heldObject.transform.localPosition = other.transform.position + new Vector3(0, 1, 0);
             heldObject = null;
             other.GetComponent<Building_FlowerPoint>()?.SetFlowerPointCondition(EBuildingProtesterState.Flower);
+            other.GetComponent<Civilion_Common>()?.SetStateOfProtester(ECivilionState.Peace);
         }
     }
 }
