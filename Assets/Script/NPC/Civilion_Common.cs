@@ -46,6 +46,8 @@ namespace Game.NPC
             _buildingCon = Game.Building.Building_Controller.Instance;
 
             StartCoroutine(IEWaitSetDestination(3f));
+
+            _navMeshAgent.avoidancePriority = Random.Range(0, 100);
         }
 
         IEnumerator IEWaitSetDestination(float waitTime)
