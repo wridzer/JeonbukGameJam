@@ -149,8 +149,12 @@ namespace Game.NPC
 
         private bool CheckTimeIsDone()
         {
-            if (_selectedFlowerPoint == null)
-                return false;
+            if(_isSettedEndDestination == false)
+            {
+                if (_selectedFlowerPoint == null)
+                    return false;
+            }
+
 
             if (_innerbuildingProtestingTime > 0)
             {
@@ -209,11 +213,9 @@ namespace Game.NPC
         [Button]
         private void FindHome()
         {
-            Building.Building_FlowerPoint[] listOfBuilding = _buildingCon.GetStateBuildings(Building.EBuildingProtesterState.Protest);
-            Building.Building_FlowerPoint oneBuilding = listOfBuilding[Random.Range(0, listOfBuilding.Length)];
-            Vector3 destinationPosition = oneBuilding.transform.position;
+            SetDestinationToEnd();
+            SetProtestersCondition(ECivilionState.Peace);
 
-            _navMeshAgent.SetDestination(destinationPosition);
         }
 
         [Button]
