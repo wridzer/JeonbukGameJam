@@ -12,15 +12,17 @@ public class ToggleProtestor : MonoBehaviour
     {
         if (state == ECivilionState.Peace)
         {
+            if(sign2 != null)
+                sign2.SetActive(false);
             sign.SetActive(false);
-            sign2?.SetActive(false);
             flower.SetActive(true);
             sadFace.SetActive(false);
             happyFace.SetActive(true);
         } else
         {
+            if (sign2 != null)
+                sign2?.SetActive(true);
             sign.SetActive(true);
-            sign2?.SetActive(true);
             flower.SetActive(false);
             sadFace.SetActive(true);
             happyFace.SetActive(false);
