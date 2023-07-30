@@ -43,6 +43,8 @@ namespace Game.NPC
 
         [SerializeField] bool _isCalledIEA;
 
+        [SerializeField] ToggleProtestor[] _toggleProtestors;
+
 
 
         void Start()
@@ -57,6 +59,8 @@ namespace Game.NPC
             StartCoroutine(IEWaitSetDestination(3f));
 
             _navMeshAgent.avoidancePriority = Random.Range(0, 100);
+
+            _toggleProtestors = this.GetComponentsInChildren<ToggleProtestor>();
         }
 
         IEnumerator IEWaitSetDestination(float waitTime)
@@ -349,6 +353,16 @@ namespace Game.NPC
             _navMeshAgent.SetDestination(Vector3.zero);
             _innerbuildingProtestingTime = _buildingProtestingTime;
             _isSettedEndDestination = true;
+            
+        }
+
+        [Button]
+        private void SetProtestersCondition(ECivilionState state)
+        {
+            foreach (var protestor in _toggleProtestors)
+            {
+                protestor.OnToggleProtestor(state);
+            }
         }
 
     } 
