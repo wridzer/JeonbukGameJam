@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276813, g: 0.21589187, b: 0.29782563, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1352,27 +1352,17 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: _zoneFiveFlowerStatePair
-      Entry: 7
-      Data: 7|System.Collections.Generic.Dictionary`2[[Game.Building.Building_FlowerPoint,
-        Assembly-CSharp],[Game.Building.EBuildingProtesterState, Assembly-CSharp]],
-        mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 3
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+  _mainMenuSceneLoader: {fileID: 6027132343369358560, guid: cedb5fc4d60e8ea4f930964a4a765534,
+    type: 3}
+  _mainMenuSceneLoader2: {fileID: 0}
+  _mainMenuSceneLoader3: {fileID: 0}
+  _mainMenuSceneLoader4: {fileID: 0}
   _dumpFlowerPoint: {fileID: 0}
   _checkingTimeForZoneComplite: 2
   _innerCheckingTimeForZoneComplite: 0
-  _zoneComplitingState: 0000000000
+  _zoneComplitingState: 00000000
+  _isGameDone: 0
+  _endIsCalled: 0
 --- !u!4 &243020023
 Transform:
   m_ObjectHideFlags: 0
@@ -11342,7 +11332,7 @@ PrefabInstance:
     - target: {fileID: 3440856185709926097, guid: 1a6e359d45cb8634a9c42135099c58f4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3440856185709926097, guid: 1a6e359d45cb8634a9c42135099c58f4,
         type: 3}

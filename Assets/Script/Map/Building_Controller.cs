@@ -31,6 +31,11 @@ namespace Game.Building
         [SerializeField] Dictionary<Building_FlowerPoint, EBuildingProtesterState> _zoneFourFlowerStatePair = new Dictionary<Building_FlowerPoint, EBuildingProtesterState>(200);
         //[SerializeField] Dictionary<Building_FlowerPoint, EBuildingProtesterState> _zoneFiveFlowerStatePair = new Dictionary<Building_FlowerPoint, EBuildingProtesterState>(200);
 
+        [SerializeField] GameObject _mainMenuSceneLoader;
+        [SerializeField] GameObject _mainMenuSceneLoader2;
+        [SerializeField] GameObject _mainMenuSceneLoader3;
+        [SerializeField] GameObject _mainMenuSceneLoader4;
+
         [SerializeField] Building_FlowerPoint _dumpFlowerPoint = new Building_FlowerPoint();
         public Building_FlowerPoint DumpFlowerPoint => _dumpFlowerPoint;
 
@@ -223,14 +228,17 @@ namespace Game.Building
             _flowerStatePair.Remove(flowerPoint);
         }
 
+        [SerializeField] bool _endIsCalled = false;
 
         private void Update()
         {
             _isGameDone = IsAllZoneComplite();
 
-            if(_isGameDone == true)
+            if (_isGameDone == true && _endIsCalled == false)
             {
-
+                Camera.main.GetComponent<CameraFollow>().ToggleEndGame();
+                StartCoroutine(BackToMainMenuIE());
+                _endIsCalled = true;
             }
 
             bool CheckInnerTimeForZoneComplite()
@@ -277,6 +285,12 @@ namespace Game.Building
             }
             CheckZoneIsComplite();
 
+        }
+
+        IEnumerator BackToMainMenuIE()
+        {
+            yield return new WaitForSeconds(10f);
+            Instantiate(_mainMenuSceneLoader);
         }
 
 
