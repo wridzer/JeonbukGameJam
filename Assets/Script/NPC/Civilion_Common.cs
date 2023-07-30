@@ -54,18 +54,46 @@ namespace Game.NPC
                 _navMeshAgent = GetComponent<NavMeshAgent>();
             }
 
-            _buildingCon = Game.Building.Building_Controller.Instance;
+            _navMeshAgent.enabled = false;
 
-            StartCoroutine(IEWaitSetDestination(3f));
+            StartCoroutine(IEWait());
+
+
+            StartCoroutine(IEWaitSetDestination(5f));
+            
 
             _navMeshAgent.avoidancePriority = Random.Range(0, 100);
 
             _toggleProtestors = this.GetComponentsInChildren<ToggleProtestor>();
+
+            _buildingCon = Game.Building.Building_Controller.Instance;
+            StartCoroutine(FindBuilding());
+
+        }
+
+        IEnumerator FindBuilding()
+        {
+            while(_buildingCon == null)
+            {
+                yield return new WaitForEndOfFrame();
+                _buildingCon = Building_Controller.Instance;
+            }
+        }
+
+
+        IEnumerator IEWait()
+        {
+
+            yield return new WaitForSeconds(2f);
+            _navMeshAgent.enabled = true;
+
         }
 
         IEnumerator IEWaitSetDestination(float waitTime)
         {
+
             yield return new WaitForSeconds(waitTime);
+
             SetDestination();
             _isCalledIEA = false;
         }

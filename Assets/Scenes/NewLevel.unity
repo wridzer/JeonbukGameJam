@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 3be676f0600978a42bb27de41e9a180f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: b365184a88d7af04aa356328b4a745c6, type: 2}
 --- !u!1001 &45398147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1251,107 +1251,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
+    SerializedFormat: 0
+    SerializedBytes: 0101100000005f0066006c006f007700650072005300740061007400650050006100690072002f0000000001a1000000530079007300740065006d002e0043006f006c006c0065006300740069006f006e0073002e00470065006e0065007200690063002e00440069006300740069006f006e00610072007900600032005b005b00470061006d0065002e004200750069006c00640069006e0067002e004200750069006c00640069006e0067005f0046006c006f0077006500720050006f0069006e0074002c00200041007300730065006d0062006c0079002d004300530068006100720070005d002c005b00470061006d0065002e004200750069006c00640069006e0067002e0045004200750069006c00640069006e006700500072006f00740065007300740065007200530074006100740065002c00200041007300730065006d0062006c0079002d004300530068006100720070005d005d002c0020006d00730063006f0072006c00690062000000000001010800000063006f006d00700061007200650072002f010000000174000000530079007300740065006d002e0043006f006c006c0065006300740069006f006e0073002e00470065006e0065007200690063002e004f0062006a0065006300740045007100750061006c0069007400790043006f006d0070006100720065007200600031005b005b00470061006d0065002e004200750069006c00640069006e0067002e004200750069006c00640069006e0067005f0046006c006f0077006500720050006f0069006e0074002c00200041007300730065006d0062006c0079002d004300530068006100720070005d005d002c0020006d00730063006f0072006c0069006200010000000506000000000000000007050101170000005f007a006f006e0065004f006e00650046006c006f0077006500720053007400610074006500500061006900720030000000000200000001010800000063006f006d00700061007200650072003001000000030000000506000000000000000007050101170000005f007a006f006e006500540077006f0046006c006f0077006500720053007400610074006500500061006900720030000000000400000009010800000063006f006d00700061007200650072000300000006000000000000000007050101190000005f007a006f006e0065005400680072006500650046006c006f0077006500720053007400610074006500500061006900720030000000000500000009010800000063006f006d00700061007200650072000300000006000000000000000007050101180000005f007a006f006e00650046006f007500720046006c006f0077006500720053007400610074006500500061006900720030000000000600000009010800000063006f006d0070006100720065007200030000000600000000000000000705
     ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: _flowerStatePair
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[Game.Building.Building_FlowerPoint,
-        Assembly-CSharp],[Game.Building.EBuildingProtesterState, Assembly-CSharp]],
-        mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[Game.Building.Building_FlowerPoint,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _zoneOneFlowerStatePair
-      Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[Game.Building.Building_FlowerPoint,
-        Assembly-CSharp],[Game.Building.EBuildingProtesterState, Assembly-CSharp]],
-        mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 3|System.Collections.Generic.ObjectEqualityComparer`1[[Game.Building.Building_FlowerPoint,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _zoneTwoFlowerStatePair
-      Entry: 7
-      Data: 4|System.Collections.Generic.Dictionary`2[[Game.Building.Building_FlowerPoint,
-        Assembly-CSharp],[Game.Building.EBuildingProtesterState, Assembly-CSharp]],
-        mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 3
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _zoneThreeFlowerStatePair
-      Entry: 7
-      Data: 5|System.Collections.Generic.Dictionary`2[[Game.Building.Building_FlowerPoint,
-        Assembly-CSharp],[Game.Building.EBuildingProtesterState, Assembly-CSharp]],
-        mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 3
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _zoneFourFlowerStatePair
-      Entry: 7
-      Data: 6|System.Collections.Generic.Dictionary`2[[Game.Building.Building_FlowerPoint,
-        Assembly-CSharp],[Game.Building.EBuildingProtesterState, Assembly-CSharp]],
-        mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 3
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+    SerializationNodes: []
   _mainMenuSceneLoader: {fileID: 6027132343369358560, guid: cedb5fc4d60e8ea4f930964a4a765534,
     type: 3}
   _mainMenuSceneLoader2: {fileID: 0}
