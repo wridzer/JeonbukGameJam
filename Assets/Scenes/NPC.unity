@@ -192,6 +192,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Protestors (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -265,6 +270,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Protestors (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -488,6 +498,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Protestors (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -636,6 +651,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Protestors (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -783,6 +803,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Protestors (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1006,6 +1031,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Protestors (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1080,6 +1110,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Protestors (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1153,6 +1188,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Protestors (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1302,6 +1342,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Protestors (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1375,6 +1420,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Protestors (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1450,6 +1500,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Protestors (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1524,6 +1579,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Protestors (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1597,6 +1657,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Protestors (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1820,6 +1885,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Protestors (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2042,6 +2112,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Protestors (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2115,6 +2190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Protestors (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2190,6 +2270,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Protestors (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2263,6 +2348,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Protestors (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2486,6 +2576,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Protestors (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2708,6 +2803,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Protestors (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2781,6 +2881,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Protestors (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960172648451657525, guid: 5e77852d61d6a6f469270ec61f8cbd15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
