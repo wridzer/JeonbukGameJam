@@ -8,7 +8,7 @@ namespace Game.Building
     {
         [SerializeField] EZoneNumber _zoneNumber;
 
-        void Start()
+        void Awake()
         {
             Building_FlowerPoint[] _flowerPoints = this.transform.GetComponentsInChildren<Building_FlowerPoint>();
 

@@ -18,6 +18,10 @@ namespace Game.Building
         [SerializeField] GameObject _flowerEffectSet;
         [SerializeField] EZoneNumber _zoneNumber;
 
+        [SerializeField] GameObject _noneEffectSet;
+        [SerializeField] GameObject _noneFlowerSet;
+        [SerializeField] GameObject _noneProtestorSet;
+
         public EZoneNumber ZoneNumber => _zoneNumber;
         public EZoneNumber SetZoneNumber { set { _zoneNumber = value; } }
 
@@ -67,12 +71,24 @@ namespace Game.Building
                 case EBuildingProtesterState.None:
                 default:
                     _flowerEffectSet.SetActive(false);
+                    _noneEffectSet.SetActive(true);
+                    _noneFlowerSet.SetActive(false);
+                    _noneProtestorSet.SetActive(false);
+                    
                     break;
                 case EBuildingProtesterState.Flower:
                     _flowerEffectSet.SetActive(true);
+                    _noneEffectSet.SetActive(false);
+                    _noneFlowerSet.SetActive(true);
+                    _noneProtestorSet.SetActive(false);
+
                     break;
                 case EBuildingProtesterState.Protest:
                     _flowerEffectSet.SetActive(false);
+                    _noneEffectSet.SetActive(false);
+                    _noneFlowerSet.SetActive(false);
+                    _noneProtestorSet.SetActive(true);
+
                     break;
             }
 
