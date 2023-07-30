@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> images = new List<GameObject>();
     [SerializeField] private int slideDuration = 3;
+    [SerializeField] private GameObject _gameSceneLoader;
     private int i = 0;
 
     public void QuitGame()
@@ -31,8 +33,7 @@ public class MenuManager : MonoBehaviour
         }
         else
         {
-            // Load Scene ???
-            gameObject.SetActive(false);
+            Instantiate(_gameSceneLoader);
         }
     }
 

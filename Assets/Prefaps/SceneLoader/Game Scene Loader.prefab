@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNames:
-  - NPC
   - Character
+  - NPC
   - NewLevel
   _waitTime: 0
-  _requestUnloadAllScenes: 0
+  _requestUnloadAllScenes: 1

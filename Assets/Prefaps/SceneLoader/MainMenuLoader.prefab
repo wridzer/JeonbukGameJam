@@ -47,4 +47,4 @@ MonoBehaviour:
   sceneNames:
   - MainMenu
   _waitTime: 0
-  _requestUnloadAllScenes: 0
+  _requestUnloadAllScenes: 1
