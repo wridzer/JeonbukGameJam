@@ -32,6 +32,7 @@ public class MenuManager : MonoBehaviour
         else
         {
             // Load Scene ???
+            gameObject.SetActive(false);
         }
     }
 

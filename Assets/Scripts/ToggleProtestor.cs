@@ -7,6 +7,7 @@ public class ToggleProtestor : MonoBehaviour
 {
     [SerializeField] private GameObject sign, sign2, flower, sadFace, happyFace;
 
+    // GetComponentInChildren<ToggleProtestor>().OnToggleProtestor(state);
     public void OnToggleProtestor(ECivilionState state)
     {
         if (state == ECivilionState.Peace)
@@ -24,5 +25,6 @@ public class ToggleProtestor : MonoBehaviour
             sadFace.SetActive(true);
             happyFace.SetActive(false);
         }
+
     }
 }

@@ -924,11 +924,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4654664adac2c1f46b981e1e0b04fe14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 12.5
   rotationSpeed: 200
   jumpForce: 10
-  slideForce: 25
-  slideDuration: 5
+  slideForce: 30
+  slideDuration: 0.5
   pickupRadius: 2
   feet: {fileID: 719436167}
   pickupPoint: {fileID: 1139538103}

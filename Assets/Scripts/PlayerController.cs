@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float pickupRadius = 1.0f;  
     [SerializeField] private Transform feet;  
     [SerializeField] private Transform pickupPoint;
-    [SerializeField] MorningBird.Sound.AudioStorage jumpSound, getPointSound;
+    [SerializeField] MorningBird.Sound.AudioStorage jumpSound, getPointSound, backgroundMusic;
     private bool isJumping = false;
     private bool isSliding = false;
     private Rigidbody rb;
@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody>();
         animator = this.GetComponent<Animator>();
+        //SoundManager.Instance.
         // Confine and hide the cursor
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
@@ -144,10 +145,10 @@ public class PlayerController : MonoBehaviour
     IEnumerator Slide()
     {
         isSliding = true;
-
-        rb.AddForce(transform.forward * slideForce, ForceMode.Impulse);
+        float oldSpeed = speed;
+        speed = slideForce;
         yield return new WaitForSeconds(slideDuration);
-
+        speed = oldSpeed;
         isSliding = false;
     }
 
