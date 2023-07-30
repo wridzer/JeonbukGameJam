@@ -934,6 +934,8 @@ MonoBehaviour:
   pickupPoint: {fileID: 1139538103}
   jumpSound: {fileID: 11400000, guid: 4ecaac84782cc29459b828acd161efc9, type: 2}
   getPointSound: {fileID: 11400000, guid: 080483e394d1b0741b2a49f40ee370da, type: 2}
+  backgroundMusic: {fileID: 11400000, guid: 01f2bdc2f63f5e94693d237d01baabc9, type: 2}
+  danceMusic: {fileID: 11400000, guid: f2f593fc0ef47694ab504c22eaa8bff1, type: 2}
 --- !u!54 &1519640569
 Rigidbody:
   m_ObjectHideFlags: 0

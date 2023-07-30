@@ -21,17 +21,17 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _name: 
-  _audioClip: {fileID: 0}
+  _name: Background
+  _audioClip: {fileID: 8300000, guid: 091ffc45ddb3df040b7b93a4c0c04479, type: 3}
   _bypassEffects: 0
   _bypassListenerEffects: 0
   _bypassReverbZones: 0
   _playStartTime: 0
   _priority: 128
-  _volume: 0.75
+  _volume: 0.1
   _pitch: 1
   _stereoPan: 0
-  _spatialBlend: 1
+  _spatialBlend: 0
   _reverbZoneMix: 1
   _dopplerLevel: 0
   _spread: 0

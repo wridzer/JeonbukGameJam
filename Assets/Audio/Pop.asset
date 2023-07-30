@@ -21,14 +21,14 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _name: 
-  _audioClip: {fileID: 0}
+  _name: Pop
+  _audioClip: {fileID: 8300000, guid: ac5ef266123b90745ba385b90713bf2c, type: 3}
   _bypassEffects: 0
   _bypassListenerEffects: 0
   _bypassReverbZones: 0
   _playStartTime: 0
   _priority: 128
-  _volume: 0.75
+  _volume: 1
   _pitch: 1
   _stereoPan: 0
   _spatialBlend: 1
