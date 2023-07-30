@@ -243,7 +243,7 @@ namespace Game.NPC
                 // Random Selection
                 for (int i = 0; i < 20; i++)
                 {
-                    _zoneNumber = (EZoneNumber)Random.Range(0, 5);
+                    _zoneNumber = (EZoneNumber)Random.Range(0, 3);
 
                     if (_buildingCon.IsZoneComplite((int)_zoneNumber) == false)
                     {
