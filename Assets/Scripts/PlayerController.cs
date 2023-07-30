@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float pickupRadius = 1.0f;  
     [SerializeField] private Transform feet;  
     [SerializeField] private Transform pickupPoint;
-    [SerializeField] MorningBird.Sound.AudioStorage jumpSound, getPointSound, backgroundMusic;
+    [SerializeField] MorningBird.Sound.AudioStorage jumpSound, getPointSound, backgroundMusic, danceMusic;
     private bool isJumping = false;
     private bool isSliding = false;
     private Rigidbody rb;
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody>();
         animator = this.GetComponent<Animator>();
-        //SoundManager.Instance.
+        SoundManager.Instance.RequestPlayAmbience(danceMusic, transform.position, true, setFollowTarget : transform);
         // Confine and hide the cursor
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
@@ -193,9 +193,12 @@ public class PlayerController : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(1f);
-            heldObject?.GetComponentInParent<PlantSpawner>().PlantRemoved();
-            heldObject?.transform.SetParent(pickupPoint);
-            heldObject.transform.localPosition = Vector3.zero;
+            if(heldObject != null)
+            {
+                heldObject.GetComponentInParent<PlantSpawner>().PlantRemoved();
+                heldObject.transform.SetParent(pickupPoint);
+                heldObject.transform.localPosition = Vector3.zero;
+            }
         }
     }
 
