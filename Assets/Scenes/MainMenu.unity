@@ -253,6 +253,8 @@ MonoBehaviour:
   - {fileID: 848743655}
   - {fileID: 1239314423}
   slideDuration: 2
+  _gameSceneLoader: {fileID: 6027132343369358560, guid: 63da897f1be380b4fb20eebaec21728e,
+    type: 3}
 --- !u!114 &127439849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2051,7 +2053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1637884071
 AudioListener:
   m_ObjectHideFlags: 0

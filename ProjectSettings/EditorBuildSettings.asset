@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/TotalGameManagerScene.unity
     guid: d011f03c4f0ad64429cff7c3a0807f8d
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Character.unity
+    guid: 6ae790fd79e11f94ea8e79e40ca73073
+  - enabled: 1
+    path: Assets/Scenes/NewLevel.unity
+    guid: 473d9ba9a4e40794aa33f6430b55ab91
+  - enabled: 1
+    path: Assets/Scenes/NPC.unity
+    guid: 173170905f93b6349b90d2b3ff02f4e1
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: e501ade317af14543ad727ce70d75409
   m_configObjects: {}
